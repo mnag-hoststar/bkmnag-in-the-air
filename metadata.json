@@ -1,0 +1,148 @@
+{
+	"name":"In the Air",
+	"thumbnail":"zinabar.png",
+	"screenshot":"zinabar.png",
+	"templateType":"standard",
+	"pageTypes":["home"],
+    "tags": {
+    "en": ["minimal", "clean", "photography", "modern", "colorful", "colourful", "flexible", "open", "simple", "restaurant", "sans-serif", "bar", "coffee shop", "cafe"],
+    "es": ["minimalista", "limpio", "fotografico", "moderno", "colorido", "flexible", "abierto", "simple", "restaurante", "sans-serif", "bar", "cafetería"],
+    "br": ["minimalista", "limpo", "fotografia", "moderno", "colorido", "flexível", "aberto", "simples", "restaurante", "sans-serif", "bar", "café"]
+    },
+	"colorSwatches":
+    {
+        "Swatch 1": {
+            "color1":"#ffffff",
+            "color2":"#eeefef",
+            "color3":"#c5dee7",
+            "color4":"#3e3e3e",
+            "color5":"#595959",
+            "color6":"#313131",
+            "color7":"#85a6b6"
+        },
+        "Swatch 2": {
+            "color1":"#ffffff",
+            "color2":"#eff2f4",
+            "color3":"#bed2d6",
+            "color4":"#3e3e3e",
+            "color5":"#595959",
+            "color6":"#313131",
+            "color7":"#68969c"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#f2f3f5",
+            "color3":"#c0cfe6",
+            "color4":"#3e3e3e",
+            "color5":"#595959",
+            "color6":"#313131",
+            "color7":"#6788ab"
+        },
+        "Swatch 4": {
+            "color1":"#ffffff",
+            "color2":"#f4f6f8",
+            "color3":"#d0d4d8",
+            "color4":"#3e3e3e",
+            "color5":"#595959",
+            "color6":"#313131",
+            "color7":"#7c8185"
+        },
+        "Swatch 5": {
+            "color1":"#ffffff",
+            "color2":"#f1f2f4",
+            "color3":"#c0cfe6",
+            "color4":"#000000",
+            "color5":"#595959",
+            "color6":"#000000",
+            "color7":"#43484c"
+        }
+    },
+    "fontSwatch": {
+       "title": "Playfair",
+        "font1": {
+            "font-family": "\"Playfair Display\", Times, serif",
+            "font-size": "34px",
+            "font-weight": "400",
+            "line-height": "40px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font2": {
+            "font-family": "\"Playfair Display\", Times, serif",
+            "font-size": "26px",
+            "font-weight": "inherit",
+            "line-height": "38px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font3": {
+            "font-family": "\"Playfair Display\", Times, serif",
+            "font-size": "22px",
+            "font-weight": "inherit",
+            "line-height": "36px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font4": {
+            "font-family": "\"Playfair Display\", Times, serif",
+            "font-size": "18px",
+            "font-weight": "inherit",
+            "line-height": "28px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font5": {
+            "font-family": "\"Source Sans Pro\", Arial, sans-serif",
+            "font-size": "16px",
+            "font-weight": "300",
+            "line-height": "26px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font6": {
+            "font-family": "\"Source Sans Pro\", Arial, sans-serif",
+            "font-size": "15px",
+            "font-weight": "300",
+            "line-height": "28px",
+            "color": "@color-swatch1",
+            "color-hover": "@color-swatch1",
+            "letter-spacing": "inherit",
+            "background-color": "@color-swatch7",
+            "background-color-hover": "darken(@color-swatch7, 5%)"
+        },
+        "font7": {
+            "font-family": "\"Playfair Display\", Times, serif",
+            "font-size": "14px",
+            "font-weight": "300",
+            "line-height": "20px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit",
+            "background-color": "@color-swatch7",
+            "background-color-hover": "darken(@color-swatch7,5%)"
+        },
+        "font8": {
+            "font-family": "\"Playfair Display\", Times, serif",
+            "font-size": "50px",
+            "font-weight": "300",
+            "line-height": "64px",
+            "color": "@color-swatch7",
+            "letter-spacing": "inherit"
+        },
+        "font9": {
+            "font-family": "\"Source Sans Pro\", Arial, sans-serif",
+            "font-size": "18px",
+            "font-weight": "300",
+            "line-height": "28px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font10": {
+            "font-family": "\"Playfair Display\", Times, serif",
+            "font-size": "30px",
+            "font-weight": "400",
+            "line-height": "40px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        }
+    }
+}
