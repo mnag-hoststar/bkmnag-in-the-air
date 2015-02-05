@@ -70,6 +70,15 @@ h4 {
     letter-spacing: @font-swatch4-letter-spacing;
 }
 
+h5 {
+    font-family: @font-swatch4-font-family;
+    font-size: @font-swatch5-font-size;
+    font-weight: @font-swatch4-font-weight;
+    line-height: @font-swatch5-line-height;
+    color: @font-swatch5-color;
+    letter-spacing: @font-swatch5-letter-spacing;
+}
+
 p {
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
@@ -986,9 +995,10 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .dietary-icon {
-	padding: 1px 5px;
+    font-size: 12px;
+	padding: 1px 10px;
 	background: fade(@color-swatch7, 20%);
-	border-radius: 2px;
+	border-radius: 3px;
 }
 
 .menu .menu-subsection {
@@ -1711,6 +1721,7 @@ color: @color-swatch5;
       height: 8px;
       line-height: 14px;
       display: inline-block;
+      margin: 5px;
       border: 1px solid darken(@color-swatch7, 10%);
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
@@ -1720,7 +1731,8 @@ color: @color-swatch5;
 
 .widget.responsiveslideshow .slideshow-widget-controls .dot.selected
 {
-   background-color: @color-swatch6;
+    border: 0;
+    background-color: @color-swatch6;
 }
 
 .widget.responsiveslideshow .dot {
@@ -1898,6 +1910,9 @@ select, input[type=search] {
 		width: 19%;
 	}
 	select, input[type=search] {
+	    -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
 		width: 80%;
 	}
 }
@@ -2293,6 +2308,9 @@ select, input[type=search] {
     .productlist-display-form {
 		select, input[type=search], label {
 			width: 100%;
+			-moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
 		}
 	}
 	.basket-summary-items-table {

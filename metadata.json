@@ -1,7 +1,7 @@
 {
 	"name":"In the Air",
-	"thumbnail":"zinabar.png",
-	"screenshot":"zinabar.png",
+	"thumbnail":"in-the-air.png",
+	"screenshot":"in-the-air.png",
 	"templateType":"standard",
 	"pageTypes":["home"],
     "tags": {
