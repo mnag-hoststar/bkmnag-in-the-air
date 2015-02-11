@@ -5,9 +5,9 @@
 	"templateType":"standard",
 	"pageTypes":["home"],
     "tags": {
-    "en": ["minimal", "clean", "photography", "modern", "colorful", "colourful", "flexible", "open", "simple", "restaurant", "sans-serif", "bar", "coffee shop", "cafe"],
-    "es": ["minimalista", "limpio", "fotografico", "moderno", "colorido", "flexible", "abierto", "simple", "restaurante", "sans-serif", "bar", "cafetería"],
-    "br": ["minimalista", "limpo", "fotografia", "moderno", "colorido", "flexível", "aberto", "simples", "restaurante", "sans-serif", "bar", "café"]
+    "en": ["minimal", "clean", "photography", "modern", "flexible", "open", "simple", "serif", "monochrome", "typography"],
+    "es": ["minimalista", "limpio", "fotografico", "moderno", "flexible", "abierto", "simple","serif", "monocromo", "tipografía"],
+    "br": ["minimalista", "limpo", "fotografia", "moderno", "flexível", "aberto", "simples","serif", "monocromático", "tipografia"]
     },
 	"colorSwatches":
     {
