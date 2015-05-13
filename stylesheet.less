@@ -617,28 +617,37 @@ footer {
 }
 
 .widget.content span.expand {
-    font-family: @font-swatch3-font-family;
-    background-color: @color-swatch3;
-    color: @font-swatch7-color;
-    font-size: @font-swatch5-font-size;
-    padding: 4px 8px;
-    margin: 4px 0;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    cursor: pointer;
     display: inline-block;
+    padding: 6px 22px;
+    margin: 0;
+    border: 1px solid darken(@color-swatch7, 10%);
+    font-family: @font-swatch7-font-family;
+    font-size: @font-swatch7-font-size;
+    font-weight:@font-swatch7-font-weight;
+    background-color: @font-swatch7-background-color;
+    color: @font-swatch7-color;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
+    //letter-spacing: 1px;
+    &:hover {
+        background-color: @font-swatch7-background-color-hover;
+        cursor: pointer;
+    }
 }
 
 .widget.content span.expand:hover,
 .widget.content span.expand:focus {
     cursor: pointer;
-    background-color: darken(@color-swatch3,5%);
+    background-color: @font-swatch7-background-color-hover;
 }
 
 /* ===============================
    IMAGE WIDGET
    =============================== */
+
+.widget.image {
+    padding-bottom: 20px;
+}
 
 .widget.image img
 {
@@ -739,6 +748,10 @@ a.btn {
     margin-right: 5px
 }
 
+.expand .more, .expand .less {
+    color: @font-swatch7-color;
+}
+
 /* ===============================
    LINE WIDGET
    =============================== */
@@ -797,6 +810,7 @@ hr.line.align-right {
    =============================== */
 
 .widget.twitter {
+    margin: 10px 0;
 }
 
 .widget.twitter a {
@@ -870,6 +884,14 @@ hr.line.align-right {
 
 .widget.twitter .twitter-content span.bk-full-name:hover, .widget.twitter .twitter-content span a:hover {
   text-decoration: underline;
+}
+
+/* ===============================
+   YOUTUBE
+   =============================== */
+
+.widget.youtube {
+    margin: 20px 0;
 }
 
 /* ===============================
@@ -995,10 +1017,12 @@ input[type="search"]::-webkit-search-decoration {
 .blog-list-footer {
 	clear: both;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 .widget.blogsearch {
 	clear: both;
+	margin: 20px 0;
 }
 
 /* ===============================
@@ -1033,7 +1057,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .widget.contactform form {
     display: block;
-    margin-bottom: 20px;
+    margin: 10px 0;
     background-color: @color-swatch1;
 }
 
@@ -1382,7 +1406,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .widget.profile {
   margin: 0 auto;
-  padding-bottom: 20px;
+  //padding-bottom: 20px;
   text-align: left;
 }
 
@@ -1534,7 +1558,7 @@ color: @color-swatch5;
 
 .container-outer .li-profile-container {
   padding: 0;
-  margin: 0;
+  margin: 20px 0;
 
 }
 
@@ -1554,6 +1578,7 @@ color: @color-swatch5;
 
 .widget.map {
   border: 1px solid #dddddd;
+  margin: 20px 0;
 }
 
 /* ===============================
@@ -1562,7 +1587,7 @@ color: @color-swatch5;
 
  .widget.signupform {
     display: block;
-    margin-bottom: 20px;
+    margin: 10px 0;
     background-color: @color-swatch1;
 }
 
@@ -1581,6 +1606,7 @@ color: @color-swatch5;
     line-height:@font-swatch5-line-height;
     color: @font-swatch5-color;
     letter-spacing: @font-swatch5-letter-spacing;
+    margin-bottom: 0;
 }
 
 .widget.signupform fieldset input, input[type=search] {
@@ -1629,6 +1655,11 @@ color: @color-swatch5;
 /* ===============================
    SLIDESHOW WIDGET
    =============================== */
+   
+.widget.responsiveslideshow {
+    margin: 20px 0;
+}
+
 .widget.responsiveslideshow .slideshow-image-list {
     height: 500px;
 }
@@ -1790,6 +1821,14 @@ color: @color-swatch5;
   }
 }
 
+.widget.ecomproduct {
+    margin: 20px 0;
+}
+
+.ecom-product-long-description {
+    margin-top: 20px;
+}
+
 .widget.ecombasket .ecombasket-list-container ul li {
 	border-bottom: 1px solid darken(@color-swatch1, 20%);
 }
@@ -1820,6 +1859,11 @@ color: @color-swatch5;
 }
 
 // Basket Summary
+
+.widget.ecombasketsummary {
+    margin: 20px 0;
+}
+
 .basket-summary-items-table {
 	border-collapse: collapse;
 	width: 100%;
@@ -1941,6 +1985,10 @@ select, input[type=search] {
 .form-group.productlist-search button {
 	bottom: 0;
 	height: 40px;
+}
+
+.widget.ecomfeaturedproducts {
+    margin-bottom: 20px;
 }
 
 
