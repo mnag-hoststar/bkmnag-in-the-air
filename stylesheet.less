@@ -934,7 +934,9 @@ input[type=search] {
 .widget.ecombasket,
 .ecom-product,
 fieldset,
-form {
+form,
+.contactform, 
+.advancedcontactform {
 	.basket-summary-empty-cta,
 	.ecombasket-item-info .ecombasket-remove-button,
 	.ecombasket-pull,
@@ -1059,8 +1061,6 @@ input[type="search"]::-webkit-search-decoration {
 
 
 .contactform label, .advancedcontactform label {
-    width: 100%;
-    float: left;
     font-family:@font-swatch5-font-family;
     font-size:@font-swatch5-font-size;
     font-weight:@font-swatch5-font-weight;
@@ -1098,23 +1098,6 @@ input[type="search"]::-webkit-search-decoration {
 .widget.contactform form fieldset textarea:focus {
     outline: none;
     box-shadow: 0 0 5px @color-swatch3;
-}
-
-.widget.contactform form fieldset button.btn {
-    margin: 0;
-    border: 1px solid darken(@color-swatch7, 10%);
-    font-family: @font-swatch7-font-family;
-    font-size: @font-swatch7-font-size;
-    font-weight:@font-swatch7-font-weight;
-    background-color: @font-swatch7-background-color;
-    color: @font-swatch7-color;
-    text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
-    text-decoration: none;
-}
-
-.widget.contactform form fieldset button.btn:hover {
-  background-color: @font-swatch7-background-color-hover;
-  cursor: pointer;
 }
 
 .widget.contactform form fieldset button.btn.justifyleft {
