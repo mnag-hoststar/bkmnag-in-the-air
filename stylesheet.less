@@ -1057,18 +1057,8 @@ input[type="search"]::-webkit-search-decoration {
    CONTACT FORM WIDGET
    =============================== */
 
-.widget.contactform form {
-    display: block;
-    margin: 10px 0;
-    background-color: @color-swatch1;
-}
 
-.widget.contactform form fieldset {
-    border: none;
-    padding: 0;
-}
-
-.widget.contactform form fieldset label {
+.contactform label, .advancedcontactform label {
     width: 100%;
     float: left;
     font-family:@font-swatch5-font-family;
@@ -1079,39 +1069,30 @@ input[type="search"]::-webkit-search-decoration {
     letter-spacing: @font-swatch5-letter-spacing;
 }
 
-.widget.contactform form fieldset input {
+.contactform input {
     height: 40px;
     width: 100%;
-    //border: none;
     background-color: @color-swatch2;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
     color: @font-swatch5-color;
-    //text-indent: 8px;
     margin-top: 6px;
-    margin-bottom: 30px;
-    //padding: 0;
 }
 
-.widget.contactform form fieldset input:focus {
+.contactform input:focus {
     outline: none;
     box-shadow: 0 0 5px @color-swatch3;
 }
 
-.widget.contactform form fieldset textarea {
+.contactform textarea, .advancedcontactform textarea {
     height: 100px;
     width: 100%;
-    //border: none;
     background-color: @color-swatch2;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
     color: @font-swatch5-color;
-    //text-indent: 8px;
-    //padding-top: 14px;
     margin-top: 6px;
-    margin-bottom: 20px;
     resize: vertical;
-    //padding: 0;
 }
 
 .widget.contactform form fieldset textarea:focus {
@@ -1120,7 +1101,6 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .widget.contactform form fieldset button.btn {
-    //padding: 16px 22px;
     margin: 0;
     border: 1px solid darken(@color-swatch7, 10%);
     font-family: @font-swatch7-font-family;
@@ -1130,7 +1110,6 @@ input[type="search"]::-webkit-search-decoration {
     color: @font-swatch7-color;
     text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
     text-decoration: none;
-    //letter-spacing: 1px;
 }
 
 .widget.contactform form fieldset button.btn:hover {
