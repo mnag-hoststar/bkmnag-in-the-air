@@ -907,7 +907,6 @@ select {
 	text-indent: 0;
 	padding: 5px 8px;
 	border: 1px solid darken(@color-swatch1, 20%);
-	width: 88%;
 	&:focus {
 		border: 1px solid darken(@color-swatch3, 10%);
 		box-shadow: 0 0 5px @color-swatch3;
@@ -918,6 +917,10 @@ input[type=text],
 input[type=email],
 input[type=search] {
 	height: 42px;
+}
+
+.form-group {
+  margin-bottom: 1em;
 }
 
 .basket-summary-quantitybtn,
@@ -1423,6 +1426,10 @@ input[type="search"]::-webkit-search-decoration {
 .widget.profile a:hover {
     color: @color-swatch3;
     text-decoration: none;
+}
+
+.bk-profile-address p:after {
+  content: "";
 }
 
 /* FOOTER PROFILE - twitter in profile widget*/
