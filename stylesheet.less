@@ -9,11 +9,6 @@ body {
 .wrapper {
     width: 90%;
     margin: 0 5%;
-    
-    @media @tablet {
-        width: 100%;
-        margin: 0;
-    }
 }
 
 a {
@@ -262,7 +257,7 @@ footer {
 	}
 
 	&.language-selector--light {
-		background-color: @color-swatch1;
+		background-color: lighten(@color-swatch7, 10%);
 	}
 	&.language-selector--dark {
 		background-color: @color-swatch7;
@@ -328,7 +323,6 @@ footer {
 
 .language-selector__list {
     .language-selector & {
-	    z-index: 100;
 	    min-width: auto;
     }
 	
@@ -355,12 +349,106 @@ footer {
 .language-selector__item {
 	.language-selector.language-selector--light &,
 	.language-selector.language-selector--dark & {
+		cursor: pointer;
 	    position: relative;
 		border: none;
 		background-color: transparent;
+		width: auto;
+		max-width: 100%;
 		
 		.language-selector--horizontal& {
 		    margin: 0 0 @language-padding @language-padding;
+		}
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal & {
+		.language-selector--light& {
+			background-color: lighten(@font-swatch7-background-color, 10%);
+			-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color, 10%);
+			-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color, 10%);
+			box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color, 10%);
+
+			&:hover {
+				background-color: @font-swatch7-background-color;
+				-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color, 20%);
+				-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color, 20%);
+				box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color, 20%);
+			}
+	
+			&--current {
+				background-color: @font-swatch7-background-color;
+				-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 10%);
+				-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 10%);
+				box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 10%);
+
+				&:hover {
+					background-color: @font-swatch7-background-color-hover;
+					-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 20%);
+					-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 20%);
+					box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 20%);
+				}
+			}
+		}
+		
+		.language-selector--dark& {
+			background-color: transparent;
+
+			&:hover {
+				background-color: @font-swatch6-background-color-hover;
+			}
+	
+			&--current {
+				&, &:hover {
+					background-color: @font-swatch6-background-color-hover;
+					-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 10%);
+					-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 10%);
+					box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 10%);
+				}
+			}
+		}
+	}
+	
+	.language-selector.language-selector--dropdown & {
+		.language-selector--light& {
+			background-color: @font-swatch7-background-color;
+			
+			&:hover {
+				background-color: @font-swatch7-background-color-hover;
+			}
+			
+			&--current {
+				-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 10%);
+				-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 10%);
+				box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 10%);
+
+				&:hover {
+					-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 20%);
+					-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 20%);
+					box-shadow: inset 0 0 0 1px darken(@font-swatch7-background-color-hover, 20%);
+				}
+			}
+		}
+
+		.language-selector--dark& {
+			background-color: @font-swatch6-background-color-hover;
+
+			&:hover {
+				background-color: darken(@font-swatch6-background-color-hover, 5%);
+			}
+
+			&--current {
+				-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 10%);
+				-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 10%);
+				box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 10%);
+
+				&:hover {
+					-webkit-box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 25%);
+					-moz-box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 25%);
+					box-shadow: inset 0 0 0 1px darken(@font-swatch6-background-color-hover, 25%);
+				}
+			}
 		}
 	}
 	
@@ -373,7 +461,7 @@ footer {
         		top: 50%;
         		right: 0;
         		margin-top: -(@language-line-height/4);
-        		min-width: @language-padding*4;
+        		width: @language-padding*4;
     		    background-color: transparent;
         		line-height: @language-line-height/2;
         	    font-size: @font-swatch6-font-size;
@@ -382,29 +470,6 @@ footer {
     		}
 	    }
 	}
-	
-	// Item Color
-	
-	&,
-	&--current {
-    	.language-selector.language-selector--dropdown & {
-    		.language-selector--light& {
-    			background-color: @color-swatch7;
-    
-    			&:hover {
-    				background-color: @font-swatch6-background-color-hover;
-    			}
-    		}
-    		
-    		.language-selector--dark& {
-    			background-color: @font-swatch6-background-color-hover;
-    
-    			&:hover {
-    				background-color: darken(@font-swatch6-background-color-hover, 5%);
-    			}
-    		}
-    	}
-	}
 }
 
 // Link
@@ -412,7 +477,7 @@ footer {
 .language-selector__link {
     .language-selector & {
     	box-sizing: border-box;
-    	padding: 0 @language-padding;
+    	padding: 0 @language-padding*2;
     	border: none;
         hyphens: auto;
     }
@@ -427,46 +492,19 @@ footer {
 	// Dropdown - Item
 
 	.language-selector.language-selector--dropdown & {
-		padding-right: @language-padding*6;
-		background-color: @color__button--background;
+		padding-right: @language-padding*4;
 	}
 	
 	// Link Color
 	
-	.language-selector.language-selector--horizontal & {
-		.language-selector--light& {
-			background-color: lighten(@color-swatch7, 10%);
-
-			&:hover {
-				background-color: @color-swatch7;
-			}
-		}
-		
-		.language-selector--dark& {
-			background-color: transparent;
-
-			&:hover {
-				background-color: @font-swatch6-background-color-hover;
-			}
-		}
-	}
-	
+	.language-selector.language-selector--horizontal &,
 	.language-selector.language-selector--horizontal .language-selector__item--current &,
 	.language-selector.language-selector--dropdown &,
 	.language-selector.language-selector--dropdown .language-selector__item--current & {
-		.language-selector--light& {
-			background-color: @color-swatch7;
-
-			&:hover {
-				background-color: @font-swatch6-background-color-hover;
-			}
-		}
-		
+		.language-selector--light&,
 		.language-selector--dark& {
-			background-color: @font-swatch6-background-color-hover;
-
-			&:hover {
-				background-color: darken(@font-swatch6-background-color-hover, 5%);
+			&, &:hover {
+				background-color: transparent;
 			}
 		}
 	}
@@ -476,13 +514,15 @@ footer {
 
 .language-selector__icon {
     .language-selector & {
+		margin: 0;
 		padding: @language-padding 0;
-    }
-    
-    .language-selector.language-selector--flag-text & {
-        margin: 0;
-    }
-    
+		min-height: @language-line-height;
+		box-sizing: content-box;
+		line-height: @language-line-height;
+	}
+	.language-selector.language-selector--flag-text & {
+		margin: 0;
+	}
 	.language-selector.language-selector--dropdown.language-selector--flag-text & {
 		float: left;
 		box-sizing: border-box;
@@ -514,39 +554,10 @@ footer {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-
-		@media only screen and (max-width: 1600px) {
-			max-width: calc(~"1000px - 5em");
-		}
-
-		@media only screen and (max-width: 1200px) {
-			max-width: calc(~"850px - 5em");
-		}
-
-		@media only screen and (max-width: 1000px) {
-			max-width: calc(~"600px - 5em");
-		}
-
-		@media only screen and (max-width: 800px) {
-			max-width: calc(~"500px - 5em");
-		}
-
-		@media only screen and (max-width: 600px) {
-			max-width: calc(~"350px - 5em");
-		}
-
-		@media only screen and (max-width: 460px) {
-			max-width: calc(~"300px - 5em");
-		}
-
-		@media only screen and (max-width: 400px) {
-			max-width: 200px;
-		}
-		
 		.language-selector--flag-text& {
-    		@media only screen and (max-width: 380px) {
-    			display: none;
-    		}
+			@media only screen and (max-width: 600px) {
+				display: none;
+			}
 		}
 	}
 }
@@ -556,7 +567,7 @@ footer {
    =============================== */
 
 .widget.navigation {
-
+	z-index: 100
 }
 
 .widget.navigation ul {
@@ -2298,24 +2309,25 @@ select, input[type=search] {
 
      /* NAV ICON */
 
-  .widget .extendednavigation a.pull {
-    display: block;
-    width: 100%;
-	   height: 30px;
-    position: absolute;
-    top: 9px;
-  }
+	.widget .extendednavigation a.pull {
+		display: block;
+		width: 100%;
+		height: 30px;
+		position: absolute;
+		top: 9px;
+	}
 
     .widget .extendednavigation a.pull:after {
-    content:"";
-    background: image('/images/nav-icon.png') no-repeat center;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+		content:"";
+		background: image('/images/nav-icon.png') no-repeat center;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 100;
+	}
 
   /* NAV */
 
