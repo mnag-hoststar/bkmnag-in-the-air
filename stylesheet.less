@@ -276,6 +276,10 @@ footer {
     	line-height: @language-line-height;
     	letter-spacing: @font-swatch6-letter-spacing;
     	color: @font-swatch6-color;
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+		text-rendering: auto;
     }
 }
 	
@@ -287,7 +291,6 @@ footer {
     	padding: @language-padding 5%;
         
         @media @tablet {
-    	    width: auto;
     	    padding: @language-padding;
         }
     }
