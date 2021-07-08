@@ -3,6 +3,7 @@
 	"thumbnail":"thumbnail.png",
 	"screenshot":"intheair-screenshot.jpg",
 	"templateType":"standard",
+    "versionTenCompatible": 1,
 	"pageTypes":["home"],
     "tags": {
     "en": ["minimal", "clean", "photography", "modern", "flexible", "open", "simple", "serif", "monochrome", "typography"],

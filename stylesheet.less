@@ -12,11 +12,21 @@ body {
 }
 
 a {
-    //font-family: @font-swatch2-font-family;
-    //font-size: @font-swatch5-font-size;
     font-weight: @font-swatch5-font-weight;
     color: darken(@color-swatch7, 10%);
     text-decoration: none;
+
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 a:hover {
@@ -78,6 +88,28 @@ h5 {
     letter-spacing: @font-swatch5-letter-spacing;
 }
 
+h1, h2, h3, h4, h5, h6,
+[class*="contentgroup__h"],
+.blog-post-title a,
+.widget.image .image-title,
+label,
+.ecom-productslist-title,
+.widget.image span.image-title,
+.contactform label,
+.advancedcontactform label {
+	.style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
+}
+
 p {
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
@@ -108,10 +140,23 @@ blockquote {
     font-style: italic;
     color:@color-swatch1;
     background-color: lighten(@color-swatch7, 10%);
-    text-shadow: 0px 1px 1px darken(@color-swatch7, 10%);
     padding: 30px;
-    // margin: 10px;
     border-radius: 4px;
+
+    .style--light & {
+    	background-color: @color--accent;
+		color: fade(@color--light, 90%);
+	}
+
+	.style--accent & {
+		background-color: darken(@color--accent, 10%);
+		color: fade(@contrast--accent, 90%);
+	}
+
+	.style--dark & {
+		background-color: darken(@color--dark, 10%);
+		color: fade(@contrast--dark, 90%);
+	}
 }
 
 blockquote:before {
@@ -124,6 +169,43 @@ blockquote:before {
     vertical-align: -.4em;
 	left: 5px;
 	top: 30px;
+	text-shadow: 0px 1px 1px darken(@color-swatch7, 10%);
+
+	.style--light & {
+		color: fade(@color--light, 50%);
+		text-shadow: 0px 1px 1px darken(@color--accent, 10%);
+	}
+
+	.style--accent & {
+		color: fade(@contrast--accent, 50%);
+		text-shadow: 0px 1px 1px darken(@color--accent, 10%);
+	}
+
+	.style--dark & {
+		color: fade(@contrast--dark, 50%);
+		text-shadow: 0px 1px 1px darken(@color--dark, 10%);
+	}
+}
+
+p, ul, ol, li,
+.contentgroup__body,
+.widget.clicktocall a,
+.widget.clicktocall a:hover,
+blockquote,
+.widget.image .image-description,
+.blog-post-published-date,
+.widget.image span.image-description {
+	.style--light & {
+		color: fade(@contrast--light, 90%);
+	}
+
+	.style--accent & {
+		color: fade(@contrast--accent, 90%);
+	}
+
+	.style--dark & {
+		color: fade(@contrast--dark, 90%);
+	}
 }
 
 /* ===============================
@@ -1029,27 +1111,82 @@ footer {
    BUTTON CSS
    =============================== */
 
-.widget.button button, .btn
-{
+.widget.button button, .btn {
   padding: 16px 22px;
   margin: 0;
-  border: 1px solid darken(@color-swatch7, 10%);
   font-family: @font-swatch7-font-family;
   font-size: @font-swatch7-font-size;
   font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
   text-decoration: none;
-  text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
-  //letter-spacing: 1px;
+
   &:hover {
-    background-color: @font-swatch7-background-color-hover;
     cursor: pointer;
   }
 }
 
 a.btn {
   text-decoration: none;
+}
+
+.widget.button button,
+.btn,
+.basket-summary-empty-cta,
+.ecombasket-item-info .ecombasket-remove-button,
+.ecombasket-pull,
+.ecombasket-checkout-link,
+input[type=submit],
+.contactform button, .contactform button.btn,
+.advancedcontactform button, .advancedcontactform button.btn,
+.signupform fieldset button,
+.widget.button.paypal,
+.widget.tweet a,
+.widget.dropbox .b-wrap .btn,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.filedownload button,
+.blog-search-submit-button,
+a.contentgroup__link {
+	background-color: @font-swatch7-background-color;
+	border: 1px solid darken(@color-swatch7, 10%);
+	color: @font-swatch7-color;
+	outline: none;
+	text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
+
+	.style--light & {
+		background-color: @color--accent;
+		border-color: darken(@color--accent, 10%);
+		color: @contrast--accent;
+    	text-shadow: 0 1px 1px darken(@contrast--accent, 40%);
+    }
+
+    .style--accent & {
+    	background-color: @color--dark;
+    	border-color: darken(@color--dark, 10%);
+    	color: @contrast--dark;
+        text-shadow: 0 1px 1px darken(@contrast--dark, 40%);
+    }
+
+    .style--dark & {
+    	background-color: @color--accent;
+    	border-color: darken(@color--accent, 10%);
+    	color: @contrast--accent;
+        text-shadow: 0 1px 1px darken(@contrast--accent, 40%);
+    }
+
+    &:hover {
+    	background-color: @font-swatch7-background-color-hover;
+
+    	.style--light & {
+			background-color: darken(@color--accent, 10%);
+	    }
+
+	    .style--accent & {
+	    	background-color: lighten(@color--dark, 10%);
+	    }
+
+	    .style--dark & {
+	    	background-color: darken(@color--accent, 10%);
+	    }
+    }
 }
 
 /* JUSTIFY */
@@ -1103,6 +1240,18 @@ hr.line {
    height: 1px;
    width: 100%;
    border: none;
+
+   .style--light & {
+		background-color: darken(@color--light, 20%);
+	}
+
+	.style--accent & {
+		background-color: darken(@color--accent, 20%);
+	}
+
+	.style--dark & {
+		background-color: lighten(@color--dark, 20%);
+	}
 }
 
 hr.line.align-left {
@@ -1135,8 +1284,19 @@ hr.line.align-right {
     line-height: @font-swatch5-line-height;
     color: @font-swatch5-color;
     letter-spacing: @font-swatch5-letter-spacing;
-    //text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
     text-decoration: none;
+
+    .style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 }
 
 .widget.clicktocall a:hover {
@@ -1156,24 +1316,61 @@ hr.line.align-right {
    color: @font-swatch5-color;
    font-size: @font-swatch5-font-size;
    text-decoration: none;
+
+   	.style--light & {
+		color: @color--accent;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @color--accent;
+	}
 }
 
-.widget.twitter .twitter-content p {
+.widget.twitter .twitter-content p,
+.widget.twitter .twitter-content time, {
   color: darken(@font-swatch5-color,40%);
+
+  	.style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 .widget.twitter a:hover {
     text-decoration: underline;
 }
 
-.widget.twitter ul {
+.widget.twitter ul.twitter {
     padding: 0;
     margin: 0;
     background-color: @color-swatch1;
     border: none;
+
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 }
 
-.widget.twitter ul li {
+.widget.twitter ul.twitter > li {
     border-bottom: none;
     list-style: none;
     font-family: @font-swatch5-font-family;
@@ -1182,6 +1379,21 @@ hr.line.align-right {
     padding: 20px 30px;
     margin-bottom: 10px;
     background-color: @color-swatch2;
+
+    .style--light & {
+        background-color: darken(@color--light, 10%);
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 10%);
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        background-color: darken(@color--dark, 10%);
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 .widget.twitter ul li:last-child {
@@ -1196,14 +1408,9 @@ hr.line.align-right {
     margin-right: 15px;
 }
 
-.widget.twitter .twitter-content time {
-  //padding-left: 20px;
-}
-
 .widget.twitter .twitter-content span a {
   padding-right: 20px;
 }
-
 
 .widget.twitter .twitter-content time, .widget.twitter .twitter-content span.bk-full-name, .widget.twitter .twitter-content span, .widget.twitter .twitter-content span a {
   font-family: @font-swatch5-font-family;
@@ -1214,10 +1421,34 @@ hr.line.align-right {
     font-family: @font-swatch4-font-family;
     color: darken(@color-swatch7,20%);
     font-size: @font-swatch5-font-size;
+
+    .style--light & {
+        color: darken(@color--accent, 20%);
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .widget.twitter .twitter-content span a {
    color: darken(@color-swatch3,20%);
+
+   .style--light & {
+        color: darken(@color--accent, 20%);
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @color--accent;
+    }
 }
 
 .widget.twitter .twitter-content span.bk-full-name:hover, .widget.twitter .twitter-content span a:hover {
@@ -1246,9 +1477,43 @@ select {
 	text-indent: 0;
 	padding: 5px 8px;
 	border: 1px solid darken(@color-swatch1, 20%);
+
+	.style--light & {
+		background-color: darken(@color--light, 10%);
+		border-color: darken(@color--light, 20%);
+		color: fade(@contrast--light, 90%);
+	}
+
+	.style--accent & {
+		background-color: @color--light;
+		border-color: darken(@color--accent, 20%);
+		color: fade(@contrast--light, 90%);
+	}
+
+	.style--dark & {
+		background-color: @color--light;
+		border-color: darken(@color--dark, 20%);
+		color: fade(@contrast--light, 90%);
+	}
+
 	&:focus {
 		border: 1px solid darken(@color-swatch3, 10%);
 		box-shadow: 0 0 5px @color-swatch3;
+
+		.style--light & {
+			border-color: darken(@color--accent, 10%);
+			box-shadow: 0 0 5px @color-accent;
+		}
+
+		.style--accent & {
+			border-color: darken(@contrast--accent, 10%);
+			box-shadow: 0 0 5px @contrast-accent;
+		}
+
+		.style--dark & {
+			border-color: darken(@color--accent, 10%);
+			box-shadow: 0 0 5px @color-accent;
+		}
 	}
 }
 
@@ -1287,20 +1552,15 @@ form,
 	.btn,
 	button.btn {
 		outline: none;
-		border: 1px solid darken(@color-swatch7, 10%);
 		padding: 7px 22px;
 		font-family: @font-swatch7-font-family;
 		font-size: @font-swatch7-font-size;
 		font-weight:@font-swatch7-font-weight;
-		background-color: @font-swatch7-background-color;
-		color: @font-swatch7-color;
 		text-decoration: none;
-		text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
 		letter-spacing: @font-swatch7-letter-spacing;
 		margin: 0;
 		&:hover {
 			text-decoration: none;
-			background-color: @font-swatch7-background-color-hover;
 		}
 	}
 	label {
@@ -1314,8 +1574,6 @@ form,
 }
 
 form button.btn:disabled,
-button:disabled,
-button.btn:disabled:hover,
 .widget.ecomcheckout .checkout-order-button:disabled {
 	background-color: fadeout(@font-swatch7-background-color, 50%);
 	border-color: fadeout(@color-swatch5, 50%);
@@ -1346,6 +1604,19 @@ input[type="search"]::-webkit-search-decoration {
 	background-size: cover;
 	background-position: center;
 	border: 1px solid darken(@color-swatch1, 20%);
+
+	.style--light & {
+		border-color: darken(@color--light, 20%);
+	}
+
+	.style--accent & {
+		border-color: darken(@color--accent, 20%);
+	}
+
+	.style--dark & {
+		border-color: darken(@color--dark, 20%);
+	}
+
 	img {
 		display: none;
 	}
@@ -1411,32 +1682,26 @@ input[type="search"]::-webkit-search-decoration {
 .contactform input {
     height: 40px;
     width: 100%;
-    background-color: @color-swatch2;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
-    color: @font-swatch5-color;
     margin-top: 6px;
 }
 
 .contactform input:focus {
     outline: none;
-    box-shadow: 0 0 5px @color-swatch3;
 }
 
 .contactform textarea, .advancedcontactform textarea {
     height: 100px;
     width: 100%;
-    background-color: @color-swatch2;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
-    color: @font-swatch5-color;
     margin-top: 6px;
     resize: vertical;
 }
 
 .widget.contactform form fieldset textarea:focus {
     outline: none;
-    box-shadow: 0 0 5px @color-swatch3;
 }
 
 .widget.contactform form fieldset button.btn.justifyleft {
@@ -1529,21 +1794,15 @@ input[type="search"]::-webkit-search-decoration {
   background-repeat: no-repeat;
   background-position: 20px center;
   margin: 2.2em auto;
-  border: 1px solid darken(@color-swatch7, 10%);
   font-family: @font-swatch7-font-family;
   font-size: @font-swatch7-font-size;
   font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
   text-decoration: none;
-  //letter-spacing: 1px;
 }
 
 .widget.tweet a:hover, .tweet a:active {
   background-image: image('/images/tweet.png') !important;
   cursor: pointer;
-  background-color: @font-swatch7-background-color-hover;
 }
 
 .widget.tweet a,
@@ -1560,8 +1819,8 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 /* ===============================
-   DROPBOX BUTTON
-   =============================== */
+	DROPBOX BUTTON
+   =============================== */
 
 .widget.dropbox .b-wrap .btn {
   margin: 0;
@@ -1575,15 +1834,8 @@ input[type="search"]::-webkit-search-decoration {
   font-family: @font-swatch7-font-family;
   font-size: @font-swatch7-font-size;
   font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
   text-decoration: none;
-  //letter-spacing: 1px;
   cursor: pointer;
-  &:hover {
-  	background-color: @font-swatch7-background-color-hover;
-  }
 }
 
 /* ===============================
@@ -1604,16 +1856,8 @@ input[type="search"]::-webkit-search-decoration {
   font-family: @font-swatch7-font-family;
   font-size: @font-swatch7-font-size;
   font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
   text-decoration: none;
-  //letter-spacing: 1px;
   cursor: pointer;
-}
-
-.widget.paypalbuynow .widget.button.paypal:hover {
-  background-color: @font-swatch7-background-color-hover;
 }
 
 /* ==================================
@@ -1650,6 +1894,23 @@ input[type="search"]::-webkit-search-decoration {
     white-space: nowrap;
     border: 1px solid darken(@color-swatch7, 10%);
     overflow: hidden;
+
+    .style--light & {
+		border-color: @color--accent;
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		background-color: @color--light;
+		border-color: @color--light;
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		background-color: @color--accent;
+		border-color: @color--accent;
+		color: @contrast--dark;
+	}
 }
 
 .widget.profile .bk-profile-socialicons span a {
@@ -1658,6 +1919,18 @@ input[type="search"]::-webkit-search-decoration {
 
 .widget.socialicons span a:hover {
    background-color: lighten(@color-swatch3,8%);
+
+   .style--light & {
+		background-color: fade(@color--accent, 80%);
+	}
+
+	.style--accent & {
+		background-color: fade(@color--light, 80%);
+	}
+
+	.style--dark & {
+		background-color: fade(@color--accent, 80%);
+	}
 }
 
 .widget.profile .bk-profile-socialicons span a:hover {
@@ -1734,7 +2007,6 @@ input[type="search"]::-webkit-search-decoration {
 
 .widget.profile {
   margin: 0 auto;
-  //padding-bottom: 20px;
   text-align: left;
 }
 
@@ -1909,7 +2181,6 @@ color: @color-swatch5;
    =============================== */
 
 .widget.map {
-  border: 1px solid #dddddd;
   margin: 20px 0;
 }
 
@@ -1920,7 +2191,6 @@ color: @color-swatch5;
  .widget.signupform {
     display: block;
     margin: 10px 0;
-    background-color: @color-swatch1;
 }
 
 .widget.signupform fieldset {
@@ -1936,7 +2206,6 @@ color: @color-swatch5;
     font-size:@font-swatch5-font-size;
     font-weight:@font-swatch5-font-weight;
     line-height:@font-swatch5-line-height;
-    color: @font-swatch5-color;
     letter-spacing: @font-swatch5-letter-spacing;
     margin-bottom: 0;
 }
@@ -1944,11 +2213,8 @@ color: @color-swatch5;
 .widget.signupform fieldset input, input[type=search] {
     height: 40px;
     width: 100%;
-    //border: none;
-    background-color: @color-swatch2;
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
-    color: @font-swatch5-color;
     text-indent: 8px;
     margin-top: 6px;
     margin-bottom: 20px;
@@ -1957,26 +2223,18 @@ color: @color-swatch5;
 
 .widget.signupform fieldset input:focus {
     outline: none;
-    box-shadow: 0 0 5px @color-swatch3;
 }
 
 .widget.signupform fieldset button.btn {
-    //padding: 16px 22px;
     margin: 0;
     border: 1px solid darken(@color-swatch7, 10%);
-    background-color: lighten(@color-swatch5,30%);
     font-family: @font-swatch7-font-family;
     font-size: @font-swatch7-font-size;
     font-weight:@font-swatch7-font-weight;
-    background-color: @font-swatch7-background-color;
-    color: @font-swatch7-color;
-    text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
     text-decoration: none;
-    //letter-spacing: 1px;
 }
 
 .widget.signupform fieldset button.btn:hover {
-    background-color: @font-swatch7-background-color-hover;
     cursor: pointer;
 }
 
@@ -2076,8 +2334,7 @@ color: @color-swatch5;
   margin: 10px 0;
 }
 
-.widget.responsiveslideshow .slideshow-widget .btn-play
-{
+.widget.responsiveslideshow .slideshow-widget .btn-play {
     background: image('/images/slideshow-play.png') center no-repeat;
     background-size: cover;
     border-radius:10px;
@@ -2092,31 +2349,52 @@ color: @color-swatch5;
     width: 60px;
 }
 
-.widget.responsiveslideshow .slideshow-widget:hover .btn-play.pause
-{
+.widget.responsiveslideshow .slideshow-widget:hover .btn-play.pause {
     background: image('/images/slideshow-pause.png') center no-repeat;
     background-size: contain;
 }
 
-.widget.responsiveslideshow .slideshow-widget-controls .dot
-{
-   background-color: transparent;
-      width: 8px;
-      height: 8px;
-      line-height: 14px;
-      display: inline-block;
-      margin: 5px;
-      border: 1px solid darken(@color-swatch7, 10%);
-      -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-      border-radius: 50px;
-      cursor: pointer;
+.widget.responsiveslideshow .slideshow-widget-controls .dot {
+	background-color: transparent;
+	width: 8px;
+	height: 8px;
+	line-height: 14px;
+	display: inline-block;
+	margin: 5px;
+	border: 1px solid darken(@color-swatch7, 10%);
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	cursor: pointer;
+
+  	.style--light & {
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: @color--dark;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	}
 }
 
-.widget.responsiveslideshow .slideshow-widget-controls .dot.selected
-{
+.widget.responsiveslideshow .slideshow-widget-controls .dot.selected {
     border: 0;
     background-color: @color-swatch6;
+
+    .style--light & {
+		background-color: @color--dark;
+	}
+
+	.style--accent & {
+		background-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		background-color: @contrast--dark;
+	}
 }
 
 .widget.responsiveslideshow .dot {
@@ -2145,10 +2423,6 @@ color: @color-swatch5;
       }
       &.productlist-search {
           width: 100%;
-          input {
-            //width: auto;
-            //border: 1px solid darken(@color-swatch2,3%);
-          }
       }
   }
 }
@@ -2321,6 +2595,16 @@ select, input[type=search] {
 
 .widget.ecomfeaturedproducts {
     margin-bottom: 20px;
+}
+
+.widget.ecomproductslist .ecom-productslist-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
+	background-color: transparent;
+
+	img {
+		background-size: contain;
+		height: 250px;
+	}
 }
 
 
