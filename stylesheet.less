@@ -2650,8 +2650,6 @@ select, input[type=search] {
    =============================== */
 
 @media only screen and (max-width: 768px) {
-
-
     .widget.companyheaderwrap {
         width: 100%;
         display: block;
@@ -2659,7 +2657,6 @@ select, input[type=search] {
     }
 
     /* NAV */
-
 
     .widget.extendednavigation {
         display: block;
@@ -2689,94 +2686,78 @@ select, input[type=search] {
 		z-index: 100;
 	}
 
-  /* NAV */
+    .widget .extendednavigation ul {
+        width: 100%;
+        display: none;
+        margin: 0;
+        border-bottom: 1px solid lighten(@color-swatch4,40%);
+    }
 
+    .widget.extendednavigation ul li {
+        border-bottom: 1px solid lighten(@color-swatch4,40%);
+    }
 
- .widget .extendednavigation ul {
-    width: 100%;
-    display: none;
-    margin: 0;
-    border-bottom: 1px solid lighten(@color-swatch4,40%);
-  }
+    .widget.extendednavigation ul li:last-child {
+        border-bottom: 1px solid lighten(@color-swatch4,40%);
+    }
 
-  .widget.extendednavigation ul li {
-    border-bottom: 1px solid lighten(@color-swatch4,40%);
-  }
+    .widget.extendednavigation ul li:hover .text {
+        color: @font-swatch6-color-hover;
+    }
 
-   .widget.extendednavigation ul li:last-child {
-    border-bottom: 1px solid lighten(@color-swatch4,40%);
-  }
+    .widget.extendednavigation ul li:hover .text {
+        color: @font-swatch6-color-hover;
+    }
 
-  .widget.extendednavigation ul li:hover .text {
-    color: @font-swatch6-color-hover;
-  }
+    .widget.extendednavigation ul li:hover,
+    .widget.extendednavigation ul li.folder:hover {
+        color: @font-swatch6-color-hover;
+        background-color: @font-swatch6-background-color-hover;
+        text-decoration: none;
+    }
 
-  .widget.extendednavigation ul li:hover .text {
-    color: @font-swatch6-color-hover;
-  }
+    .widget .extendednavigation ul li {
+        width: 100%;
+        padding: 0;
+    }
 
-  .widget.extendednavigation ul li:hover,
-.widget.extendednavigation ul li.folder:hover {
-    color: @font-swatch6-color-hover;
-    background-color: @font-swatch6-background-color-hover;
-    text-decoration: none;
-}
+    .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
+        margin: 0;
+    }
 
-  .widget.extendednavigation ul li.folder {
+    .widget.extendednavigation ul li > ul {
+        display: none!important;
+    }
 
-  }
+    .widget.extendednavigation ul li:hover > ul {
+        display: block !important;
+        width: 100%;
+        position: absolute;
+        z-index: 500;
+        margin-top: 0;
+        background-color: lighten(@color-swatch7,5%);
+    }
 
-  .widget .extendednavigation ul li {
-    width: 100%;
-    padding: 0;
-   
-  }
+    .widget.extendednavigation ul li:hover > ul > li {
+        border-bottom: 1px solid lighten(@color-swatch4,30%);
+    }
 
-  .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
-      margin: 0;
-  }
+    .widget.extendednavigation ul li:hover > ul > li .text {
+        color: @font-swatch6-color;
+    }
 
+    .widget.extendednavigation ul li:hover > ul > li:hover .text {
+        color: @font-swatch6-color-hover;
+    }
 
+    .widget.extendednavigation ul li.folder {
+        border-radius: 0;
+    }
 
-
-  .widget.extendednavigation ul li > ul {
-      display: none!important;
-  }
-
-  .widget.extendednavigation ul li:hover > ul {
-      display: block !important;
-      width: 100%;
-      position: absolute;
-      z-index: 500;
-      margin-top: 0;
-      background-color: lighten(@color-swatch7,5%);
-  }
-
-  .widget.extendednavigation ul li:hover > ul > li {
-     border-bottom: 1px solid lighten(@color-swatch4,30%);
-  }
-
-  .widget.extendednavigation ul li:hover > ul > li .text {
-    color: @font-swatch6-color;
-  }
-
-  .widget.extendednavigation ul li:hover > ul > li:hover .text {
-    color: @font-swatch6-color-hover;
-  }
-
-  .widget.extendednavigation ul li.folder {
-    border-radius: 0;
-  }
-
-  .widget.extendednavigation ul li:hover > ul li:first-child {
-    border-top: none;
-  }
-
-
-
-
-
-
+    .widget.extendednavigation ul li:hover > ul li:first-child {
+        border-top: none;
+    }
+    
     /* FEATURE */
 
     .widget.feature {
