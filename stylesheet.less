@@ -1463,8 +1463,26 @@ input[type=search] {
 	height: 42px;
 }
 
+select {
+    padding-right: 2.2em;
+    width: 100%;
+    .appearance(none) !important;
+    background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-position: right 0.5em center;
+    background-size: 1.2em;
+}
+
 .form-group {
-  margin-bottom: 1em;
+  margin-bottom: 10px;
+}
+
+.js-recaptcha {
+    margin-bottom: 0;
+
+    > *:last-child {
+        margin-bottom: 10px;
+    }
 }
 
 .basket-summary-quantitybtn,
@@ -2048,7 +2066,7 @@ color: @color-swatch5;
     color: @font-swatch5-color;
     text-indent: 8px;
     margin-top: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0;
     background-color: @color-swatch2;
 }
@@ -2127,7 +2145,7 @@ color: @color-swatch5;
     font-size: @font-swatch5-font-size;
     text-indent: 8px;
     margin-top: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0;
 }
 
@@ -2142,6 +2160,9 @@ color: @color-swatch5;
     font-size: @font-swatch7-font-size;
     font-weight:@font-swatch7-font-weight;
     text-decoration: none;
+    min-height: 40px;
+    height: auto;
+    line-height: 1.25em;
 }
 
 .widget.signupform fieldset button.btn:hover {
