@@ -23,27 +23,7 @@ body {
     margin: 0 5%;
 }
 
-a {
-    font-weight: @font-swatch5-font-weight;
-    color: darken(@color-swatch7, 10%);
-    text-decoration: none;
-
-    .style--light & {
-        color: @color--accent;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
-}
-
-a:hover {
-    text-decoration: underline
-}
+// TYPOGRAPHY
 
 h1,
 h2,
@@ -105,6 +85,7 @@ h1, h2, h3, h4, h5, h6,
 .blog-post-title a,
 .widget.image .image-title,
 label,
+.label,
 .ecom-productslist-title,
 .widget.image span.image-title,
 .contactform label,
@@ -124,14 +105,50 @@ label,
 	}
 }
 
+// Normal Text
+
 p {
     font-family: @font-swatch5-font-family;
     font-size: @font-swatch5-font-size;
     font-weight: @font-swatch5-font-weight;
     line-height: @font-swatch5-line-height;
-    color: @font-swatch5-color;
     letter-spacing: @font-swatch5-letter-spacing;
+    color: @font-swatch5-color;
+
+	.style--light & {
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
+	}
 }
+
+.widget {
+	span, small, pre, code,
+	table, th, td,
+	&.content {
+		color: @font-swatch5-color;
+	
+		.style--light & {
+			color: @contrast--light;
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
+		}
+	}
+}
+
+// List
 
 ul,
 ol,
@@ -143,6 +160,95 @@ li {
     color: @font-swatch5-color;
     letter-spacing: @font-swatch5-letter-spacing;
 }
+
+p, ul, ol, li,
+.contentgroup__body,
+.widget.clicktocall a,
+.widget.clicktocall a:hover,
+blockquote,
+.widget.image .image-description,
+.blog-post-published-date,
+.widget.image span.image-description {
+	.style--light & {
+		color: fade(@contrast--light, 90%);
+	}
+
+	.style--accent & {
+		color: fade(@contrast--accent, 90%);
+	}
+
+	.style--dark & {
+		color: fade(@contrast--dark, 90%);
+	}
+}
+
+// Link
+
+a {
+    font-weight: @font-swatch5-font-weight;
+    color: darken(@color-swatch7, 10%);
+    text-decoration: none;
+
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+    
+    &:hover {
+        text-decoration: underline
+    }
+}
+
+// Preformatted and Code Text
+
+pre, code {
+	display: block;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	border: none;
+	.border-radius(0);
+	background-color: darken(@color-swatch1, 10%);
+	overflow: auto;
+	.paragraph;
+	font-family: monospace;
+
+	.style--light & {
+		background-color: darken(@color--light, 10%);
+	}
+
+	.style--accent & {
+		background-color: lighten(@color--accent, 10%);
+	}
+
+	.style--dark & {
+		background-color: lighten(@color--dark, 10%);
+	}
+}
+
+code {
+	border-left: 1px solid @color-swatch5;
+
+	.style--light & {
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	}
+}
+
+// Blockquote
 
 blockquote {
     margin: 30px 0;
@@ -202,28 +308,16 @@ blockquote {
     }
 }
 
-p, ul, ol, li,
-.contentgroup__body,
-.widget.clicktocall a,
-.widget.clicktocall a:hover,
-blockquote,
-.widget.image .image-description,
-.blog-post-published-date,
-.widget.image span.image-description {
 	.style--light & {
-		color: fade(@contrast--light, 90%);
 	}
 
 	.style--accent & {
-		color: fade(@contrast--accent, 90%);
 	}
 
 	.style--dark & {
-		color: fade(@contrast--dark, 90%);
 	}
 }
 
-// CUSTOM CSS
 
 .main {
     padding: 2em 0;
@@ -753,7 +847,7 @@ footer .widget.profile {
     }
 }
 
-// EXTENDED NAVIGATION
+// NAVIGATION
 
 .bk-nav {
   background-color: @color-swatch7;
@@ -1031,8 +1125,6 @@ footer .widget.profile {
             }
         }
     }
-
-    // EXTENDED NAVIGATION
 
     .main {
         max-width: 100%;
@@ -2067,7 +2159,7 @@ form {
 .advancedcontactform .option-item--radio,
 .advancedcontactform .option-item--checkbox {
 	label {
-		label;
+		.label;
 		word-break: break-word;
 	}
 }
@@ -2942,6 +3034,8 @@ select, input[type=search] {
     margin-top: 20px;
 }
 
+// Basket
+
 .widget.ecombasket {
 	margin-bottom: 20px;
 
@@ -2954,6 +3048,8 @@ select, input[type=search] {
         }
     }
 }
+
+// Checkout
 
 .widget.ecomcheckout .checkout-order-button {
     padding: 5px 14px 7px;
@@ -3016,6 +3112,11 @@ select, input[type=search] {
     
 	.basket-summary-subtotal {
 		padding: 20px;
+
+        @media @mobile {
+            padding: 0 0 10px;
+            text-align: left;
+        }
 	}
 
     td,
@@ -3024,44 +3125,36 @@ select, input[type=search] {
             padding: 10px;
         }
     }
-}
 
-.basket-summary-amount,
-.basket-summary-subtotal {
-	text-align: center;
-}
+    .basket-summary-amount,
+    .basket-summary-subtotal {
+        text-align: center;
 
-.basket-summary-amount {
-    @media @mobile {
-        text-align: right;
+        &-column {
+            @media @mobile {
+                display: none;
+            }
+        }
     }
-}
-
-.basket-summary-subtotal {
-    @media @mobile {
-        padding: 0 0 10px;
-        text-align: left;
+    
+    .basket-summary-amount {
+        @media @mobile {
+            text-align: right;
+        }
     }
-}
 
-.basket-summary-amount-column,
-.basket-summary-details-column {
-    @media @mobile {
-        display: none;
+    .basket-summary-quantitybtn {
+        button.btn {
+            padding: 7px 18px;
+        }
     }
-}
 
-.basket-summary-quantitybtn {
-	button.btn {
-		padding: 7px 18px;
-	}
-}
-
-.basket-summary-items-column {
-	width: 30%;
-
-    @media @mobile {
-        text-align: left;
+    .basket-summary-items-column {
+        width: 30%;
+    
+        @media @mobile {
+            text-align: left;
+        }
     }
 }
 
