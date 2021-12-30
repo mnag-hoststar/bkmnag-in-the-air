@@ -3122,8 +3122,12 @@ select, input[type=search] {
 
 // E-COMMERCE
 
-.widget.ecomproductslist  {
+.widget.ecomproductslist,
+.widget.ecomfeaturedproducts {
     margin: 0 -10px;
+    margin-bottom: 20px;
+
+	// Filter
 
     .productlist-filter {
         margin: 0 10px;
@@ -3135,10 +3139,14 @@ select, input[type=search] {
                 margin: 0;
             }
 
+			// Filter Group
+
             .form-group {
                 display: flex;
                 align-items: center;
                 margin: 0 5px 10px 0;
+                width: 100%;
+                padding: 0;
                                 
                 @media @mobile {
                     display: block;
@@ -3165,7 +3173,8 @@ select, input[type=search] {
                     }
                 }
                 
-                select, input[type=search] {
+                select,
+                input[type=search] {
                     width: 60%;
                     flex-grow: 2;
                                 
@@ -3188,10 +3197,15 @@ select, input[type=search] {
                     cursor: pointer;
                     margin: 0;
                 }
+
+				// Search Form
 		
 				&.productlist-search {
                     display: flex;
                     align-items: center;
+                    position: relative;
+                    float: left;
+                    margin: 0 0 20px;
                                 
                     @media @mobile {
                         display: block;
@@ -3200,8 +3214,10 @@ select, input[type=search] {
                     .responsivecolumns & {
                         display: block;
                     }
-		
-					input {
+
+                    input[type=search] {
+                        padding-right: 100px;
+                        box-sizing: border-box;
 						flex-grow: 1;
                         border-right-width: 0;
 					
@@ -3219,7 +3235,10 @@ select, input[type=search] {
 				
 					button.btn {
                         position: static;
+                        right: 0;
+                        bottom: 0;
                         width: 20%;
+                        height: 40px;
 
 						@media @mobile {
                             margin: 10px 0;
@@ -3243,25 +3262,6 @@ select, input[type=search] {
                     -webkit-appearance: none;
                     appearance: none;
                 }
-            }
-        }
-
-        // Ecommerce Filter Forms
-
-        .form-group.productlist-search {
-            position: relative;
-            float: left;
-            margin: 0 0 20px;
-
-            input[type=search] {
-                padding-right: 100px;
-                box-sizing: border-box;
-            }
-
-            button {
-                position: absolute;
-                right: 0;
-                bottom: 10px;
             }
         }
 
@@ -3313,6 +3313,23 @@ select, input[type=search] {
         }
     }
 }
+
+.widget.ecomproductslist .productlist-item-count {
+    clear: both;
+}
+
+.widget.ecomproductslist .ecom-productslist-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
+	background-color: transparent;
+    background-position: center;
+
+	img {
+		background-size: contain;
+		height: 250px;
+	}
+}
+
+// Product
 
 .widget.ecomproduct {
     margin: 20px 0;
@@ -3450,35 +3467,6 @@ select, input[type=search] {
 	display: inline-block;
 	min-width: 40px;
 	text-align: center;
-}
-
-.productlist-item-count {
-    clear: both;
-}
-
-.productlist-display-form .form-group {
-	width: 100%;
-	padding: 0;
-}
-
-.form-group.productlist-search button {
-	bottom: 0;
-	height: 40px;
-}
-
-.widget.ecomfeaturedproducts {
-    margin-bottom: 20px;
-}
-
-.widget.ecomproductslist .ecom-productslist-image-wrap,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
-	background-color: transparent;
-    background-position: center;
-
-	img {
-		background-size: contain;
-		height: 250px;
-	}
 }
 
 // CLEARFIX
