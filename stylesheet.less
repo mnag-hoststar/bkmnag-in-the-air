@@ -1777,8 +1777,6 @@ a.contentgroup__link {
     }
 }
 
-// JUSTIFY
-
 .widget.button button.btn.justifyleft { text-align: left; }
 .widget.button button.btn.justifycenter { text-align: center; }
 .widget.button button.btn.justifyright { text-align: right; }
@@ -1791,6 +1789,22 @@ a.contentgroup__link {
 .expand .more,
 .expand .less {
     color: @font-swatch7-color;
+}
+
+.widget button.btn span {
+	color: @font-swatch7-color;
+
+	.style--light & {
+		color: @contrast--accent;
+	}
+
+	.style--accent & {
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		color: @contrast--accent;
+	} 
 }
 
 // LINE
