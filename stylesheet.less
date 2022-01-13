@@ -3561,6 +3561,21 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 
 .widget.ecomproduct {
     margin: 20px 0;
+
+    .product-actions {
+		button {
+			margin-bottom: 1em;
+			text-align: center;
+        
+			@media @mobile {
+				width: 100%;
+			}
+
+			&:before {
+				float: none;
+			}
+		}
+	}
 }
 
 .ecom-product-long-description {
