@@ -1656,22 +1656,32 @@ footer .widget.profile {
 
 .widget.gallery {
     ul.gallery-widget li {
-        @media @mobile {
-            width: 50%;
-            padding-bottom: 50%;
+		@media @tablet {
+			width: 50%;
+			padding-bottom: 50%;
+		}
+
+		@media @mobile {
+			width: 100%;
+			padding-bottom: 100%;
+		}
+
+        .responsivecolumns & {
+            width: 100%;
+            padding-bottom: 100%;
         }
-    }
 
-    li span.inner {
-        .title,
-        .description {
-            @media @tablet {
-                font-size:bkscale(@font-swatch5-font-size,0.9);
-                line-height:bkscale(@font-swatch5-line-height,0.9);
-            }
-
-            @media @mobile {
-                max-height: 150px;
+        span.inner {
+            .title,
+            .description {
+                @media @tablet {
+                    font-size:bkscale(@font-swatch5-font-size,0.9);
+                    line-height:bkscale(@font-swatch5-line-height,0.9);
+                }
+    
+                @media @mobile {
+                    max-height: 150px;
+                }
             }
         }
     }
