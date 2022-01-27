@@ -3112,120 +3112,6 @@ input[type=search] {
             display: none;
         }
     }
-
-    .slideshow-widget {
-        .btn-prev,
-        .btn-next {
-            font-size: 0;
-            z-index: 11;
-            text-indent: -99999px;
-            opacity: 0.5;
-        }
-    
-        .btn-prev {
-            background: image('/images/slideshow-arrow-left.png') no-repeat center left;
-
-            .svg & {
-                left: 10px;
-                background: image('/images/slideshow-arrow-left.svg') no-repeat center left;
-                background-size: contain;
-            }
-        }
-    
-        .btn-next {
-            background: image('/images/slideshow-arrow-right.png') no-repeat center right;
-    
-            .svg & {
-                right: 10px;
-                background: image('/images/slideshow-arrow-right.svg') no-repeat center right;
-                background-size: contain;
-            }
-        }
-    
-        .btn-play {
-            background: image('/images/slideshow-play.png') center no-repeat;
-            background-size: cover;
-            border-radius: 10px;
-            font-size: 0;
-            text-indent: -99999px;
-            border-radius: 100%;
-            border: 1px solid fade(@color-swatch6, 50%);
-            top: 50%;
-            left: 50%;
-            margin-left: -30px;
-            margin-top: -50px;
-            width: 60px;
-        
-            &.pause {
-                background: image('/images/slideshow-pause.png') center no-repeat;
-                background-size: contain;
-            }
-        }
-    
-        &-controls {
-            margin: 10px 0;
-            
-            .dot {
-                background-color: transparent;
-                width: 8px;
-                height: 8px;
-                line-height: 14px;
-                display: inline-block;
-                margin: 5px;
-                border: 1px solid darken(@color-swatch7, 10%);
-                -webkit-border-radius: 50px;
-                -moz-border-radius: 50px;
-                border-radius: 50px;
-                cursor: pointer;
-            
-                .style--light & {
-                    border-color: @color--accent;
-                }
-            
-                .style--accent & {
-                    border-color: @color--dark;
-                }
-            
-                .style--dark & {
-                    border-color: @color--accent;
-                }
-                
-                &.selected {
-                    border: 0;
-                    background-color: @color-swatch6;
-                
-                    .style--light & {
-                        background-color: @color--dark;
-                    }
-                
-                    .style--accent & {
-                        background-color: @contrast--accent;
-                    }
-                
-                    .style--dark & {
-                        background-color: @contrast--dark;
-                    }
-                }
-            }
-        }
-    }
-    
-    .dot {
-        border: none;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        border-radius: 50px;
-    }
-    
-    .btn-play:after {
-        display: none;
-    }
-    
-    .slideshow-widget .btn-prev,
-    .slideshow-widget .btn-next {
-        width: 30px;
-        height: 30px
-    }
     
     .slideshow-image-item, 
     .slideshow-widget {
@@ -3239,6 +3125,223 @@ input[type=search] {
     .slideshow-image-list.crop span.inner.landscape {
         @media @mobile {
             height: 200px;
+        }
+    }
+
+    .slideshow-widget {
+		.btn-play,
+		.btn-prev,
+		.btn-next {
+			position: absolute;
+			opacity: 1;
+			top: 50%;
+            border: 1px solid darken(@color-swatch7, 10%);
+            background-color: @font-swatch7-background-color;
+			width: 50px;
+			height: 50px;
+			margin-top: -25px;
+			-webkit-transition: background-color 0.15s ease-in-out;
+			-moz-transition: background-color 0.15s ease-in-out;
+			-o-transition: background-color 0.15s ease-in-out;
+			transition: background-color 0.15s ease-in-out;
+			font-size: 0;
+			line-height: 0;
+            color: @font-swatch7-color;
+
+            .style--light & {
+                background-color: @color--accent;
+                border-color: darken(@color--accent, 10%);
+                color: @contrast--accent;
+            }
+        
+            .style--accent & {
+                background-color: @color--dark;
+                border-color: darken(@color--dark, 10%);
+                color: @contrast--dark;
+            }
+        
+            .style--dark & {
+                background-color: @color--accent;
+                border-color: darken(@color--accent, 10%);
+                color: @contrast--accent;
+            }
+
+			&:hover {
+                background-color: @font-swatch7-background-color-hover;
+
+                .style--light & {
+                    background-color: darken(@color--accent, 10%);
+                }
+
+                .style--accent & {
+                    background-color: lighten(@color--dark, 10%);
+                }
+
+                .style--dark & {
+                    background-color: darken(@color--accent, 10%);
+                }
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				color: @font-swatch7-color;
+				background: transparent;
+				top: 50%;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -5px;
+
+                .style--light & {
+                    color: @contrast--accent;
+                }
+            
+                .style--accent & {
+                    color: @contrast--dark;
+                }
+            
+                .style--dark & {
+                    color: @contrast--accent;
+                }
+			}
+		}
+
+		.btn-play {
+    		left: 50%;
+			margin-left: -25px;
+
+			&:after,
+			&.pause:after {
+				height: 0;
+				width: 0;
+				border: 10px solid transparent;
+				border-left: 15px solid @font-swatch7-color;
+
+                .style--light & {
+                    border-color: @contrast--accent;
+                }
+            
+                .style--accent & {
+                    border-color: @contrast--dark;
+                }
+            
+                .style--dark & {
+                    border-color: @contrast--accent;
+                }
+			}
+
+			&.pause:after {
+				height: 18px;
+				width: 6px;
+				margin-top: -9px;
+				margin-left: -6px;
+				border: none;
+				border-left: 3px solid @font-swatch7-color;
+				border-right: 3px solid @font-swatch7-color;
+
+                .style--light & {
+                    border-color: @contrast--accent;
+                }
+            
+                .style--accent & {
+                    border-color: @contrast--dark;
+                }
+            
+                .style--dark & {
+                    border-color: @contrast--accent;
+                }
+			}
+		}
+
+		.btn-prev,
+		.btn-next {
+			&:after {
+				border: 3px solid @font-swatch7-color;
+				transform: rotate(45deg);
+				margin-top: -7px;
+				margin-left: auto;
+				left: auto;
+				right: auto;
+				width: 12px;
+				height: 12px;
+
+                .style--light & {
+                    border-color: @contrast--accent;
+                }
+            
+                .style--accent & {
+                    border-color: @contrast--dark;
+                }
+            
+                .style--dark & {
+                    border-color: @contrast--accent;
+                }
+			}
+		}
+
+		.btn-prev {
+			&:after {
+				border-top: transparent;
+				border-right: transparent;
+				margin-left: -5px;
+				left: 50%;
+			}
+		}
+
+		.btn-next {
+			&:after {
+				border-bottom: transparent;
+				border-left: transparent;
+				margin-right: -5px;
+				right: 50%;
+			}
+		}
+    
+        &-controls {
+            margin: 10px 0;
+            
+            .dot {
+                background-color: transparent;
+                width: 12px;
+                height: 12px;
+                line-height: 14px;
+                display: inline-block;
+                margin: 5px;
+                border: 1px solid darken(@color-swatch7, 10%);
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                cursor: pointer;
+
+                .style--light & {
+                    border-color: darken(@color--accent, 10%);
+                }
+            
+                .style--accent & {
+                    border-color: darken(@color--dark, 10%);
+                }
+            
+                .style--dark & {
+                    border-color: darken(@color--accent, 10%);
+                }
+                
+                &.selected {
+                    border: none;
+                    background-color: @font-swatch7-background-color-hover;
+
+                    .style--light & {
+                        background-color: darken(@color--accent, 10%);
+                    }
+    
+                    .style--accent & {
+                        background-color: lighten(@color--dark, 10%);
+                    }
+    
+                    .style--dark & {
+                        background-color: darken(@color--accent, 10%);
+                    }
+                }
+            }
         }
     }
 }
