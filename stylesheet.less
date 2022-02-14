@@ -706,20 +706,6 @@ body.edit {
     }
 }
 
-footer .widget.profile {
-    .bk-profile-socialicons {
-        span {
-            a {
-                background-color: transparent;
-
-                &:hover {
-                    background-color: @color-swatch2;
-                }
-            }
-        }
-    }
-}
-
 .gdpr-footer {
     background-color: darken(@color-swatch2, 10%);
     padding: 15px 0;
@@ -1372,15 +1358,15 @@ footer .widget.profile {
 
         &:after {
             @media @tablet {
-                content:"";
-                background: image('/images/nav-icon.png') no-repeat center;
-                width: 100%;
-                height: 100%;
-                display: inline-block;
-                position: absolute;
-                right: 0;
-                top: 0;
                 z-index: 100;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 3px;
+                width: 30px;
+                background-color: @font-swatch6-color;
+                box-shadow: 0 9px 0 @font-swatch6-color, 0 -9px 0 @font-swatch6-color;
             }
         }
     }
@@ -1460,6 +1446,10 @@ footer .widget.profile {
                     color: darken(@color-swatch3,10%);
                     padding: 0 10px;
                 }
+
+                span {
+                    color: @color-swatch1;
+                }
             }
     
             h3 {
@@ -1479,6 +1469,10 @@ footer .widget.profile {
                     font-size: bkscale(@font-swatch9-font-size,0.65);
                     line-height: bkscale(@font-swatch9-line-height,0.67);
                     padding: 0 10px;
+                }
+
+                span {
+                    color: @color-swatch1;
                 }
             }
             
@@ -1553,6 +1547,10 @@ footer .widget.profile {
                     &.btn.bold { font-weight: bold; }
                     span { vertical-align: center; }
                     i { margin-right: 5px; }
+
+                    .btnText {
+                        color: @color-swatch1;
+                    }
                 }
             }
         }
@@ -1796,22 +1794,106 @@ form.blog-search-form .form-group button,
 // Image Buttons
 
 .widget.tweet a,
+.widget.clicktocall a,
 .widget.dropbox button,
-.widget.paypalbuynow .widget.button.paypal,
-.widget.filedownload .btn,
-.widget.clicktocall a {
+.widget.filedownload button.btn {
 	&, &:hover, &:focus {
-		background-repeat: no-repeat;
-		background-position: 1em;
-		background-size: 1.5em;
-		padding-left: 3.5em;
+		background-image: none;
 	}
 }
 
-.widget.clicktocall a {
-	&, &:hover, &:focus {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENTg4MDkxNUI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENTg4MDkxNkI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxMkE4MzU2QjRCQjExRTI5RkMwOEFDNjgzRUY3MzVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ1ODgwOTE0QjRENzExRTI5RkMwOEFDNjgzRUY3MzVCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+s2QrvwAAAPxJREFUeNpi/P//PwM1ARMDlQE2A7uAGOTsHWSZCPIyFHMC8cz/qMASSZ4ojOzCCUCchmafOyVeVsIiHwXE7OQa+BaLPC8Uk2XgdiD+icR/DMS2QPyG3EhhAeIFSBEyk9QIAadpNAFDJAP/ArE+pQaCcDOSoSepYSAIH0EydCuaHCMQ8wIxEykGigHxPSRDzwOxGlQuDIi/AfExIG4BYn8gFiBkIAjLAfFjJEM/AfFGIH7zHxMcAGJ1QgaCsDAQn/hPGDwCYhdiDIThRgIGNhPjZXSsAsQLockJGUxHVsdIYgELylmJQOwHxPxAfAGIa4D4C0wB46AvsQECDAB0BaRrDCyrSQAAAABJRU5ErkJggg==);
+.widget.tweet a,
+.widget.clicktocall a,
+.widget.dropbox button span,
+.widget.filedownload button.btn {
+	&:before {
+		float: left;
+		padding-right: 0.5em;
+		background-image: none;
+		font-family:'FontAwesome';
+		font-size: 1.5em;
 	}
+}
+
+.widget.tweet a:before {content: '\f099';}
+.widget.clicktocall a:before {content: '\f095';}
+.widget.dropbox button span:before {content: '\f16b';}
+.widget.filedownload button.btn:before {content: '\f019';}
+
+.widget.paypalbuynow .widget.button.paypal {
+	padding-left: 3.2em;
+    background-size: 1.2em;
+    background-position: 1.25em center;
+}
+
+// Social Icons
+
+.widget.socialicons,
+footer.bk-footer .widget.profile .bk-profile-socialicons {
+    padding: 10px 0;
+    font-size: 1em;
+    font-family: @font-swatch7-font-family;
+
+    span {
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: none;
+            margin: 0 5px 10px;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-indent: 0;
+            font-size: 0;
+
+            &:before {
+                font-family: 'FontAwesome';
+                text-indent: 0;
+                font-size: 24px;
+            }
+        }
+
+		&.bk-socialicons-linkedin a:before {content: '\f0e1';}
+		&.bk-socialicons-twitter a:before {content: '\f099';}
+		&.bk-socialicons-instagram a:before {content: '\f16d';}
+		&.bk-socialicons-pinterest a:before {content: '\f0d2';}
+		&.bk-socialicons-facebook a:before {content: '\f09a';}
+		&.bk-socialicons-rss a:before {content: '\f09e';}
+		&.bk-socialicons-vkontakte a:before {content: '\f189';}
+		&.bk-socialicons-xing a:before {content: '\f168';}
+		&.bk-socialicons-youtube a:before {content: '\f16a';}
+    }
+}
+
+footer.bk-footer .widget.profile .bk-profile-socialicons {
+    span {
+        a {
+            background-color: transparent;
+            color: @font-swatch7-background-color;
+
+            &:hover {
+                background-color: @font-swatch7-background-color-hover;
+                color: @font-swatch7-color;
+        
+                .style--light & {
+                    background-color: darken(@color--accent, 10%);
+                    color: @contrast--accent;
+                }
+                
+                .style--accent & {
+                    background-color: lighten(@color--dark, 10%);
+                    color: @contrast--dark;
+                }
+                
+                .style--dark & {
+                    background-color: darken(@color--accent, 10%);
+                    color: @contrast--accent;
+                }
+            }
+        }
+    }
 }
 
 // LINE
@@ -1848,105 +1930,6 @@ hr.line {
     
     &.align-right {
         margin: 20px 0px 20px auto
-    }
-}
-
-// CLICK TO CALL
-
-.widget.clicktocall {
-    padding: 8px 0;
-
-    @media @mobile {
-        padding: 20px 0;
-        display:block;
-    }
-
-    a {
-        padding: 10px 0;
-        font-family: @font-swatch5-font-family;
-        font-size: @font-swatch5-font-size;
-        font-weight: @font-swatch5-font-weight;
-        line-height: @font-swatch5-line-height;
-        color: @font-swatch5-color;
-        letter-spacing: @font-swatch5-letter-spacing;
-        text-decoration: none;
-
-        @media @mobile {
-            background-image: image('/images/ic-desktop-call.png');
-            background-color: @font-swatch7-background-color;
-            background-position: 20px center;
-            background-repeat:no-repeat;
-            padding: 10px 22px 10px 45px;
-            margin: 2.2em auto;
-            border: 1px solid darken(@color-swatch7, 10%);
-            font-family: @font-swatch7-font-family;
-            font-size: @font-swatch7-font-size;
-            font-weight:@font-swatch7-font-weight;
-            background-color: @font-swatch7-background-color;
-            color: @font-swatch7-color;
-            text-decoration: none;
-            text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
-        }
-        
-        &:hover {
-            cursor: pointer;
-
-            @media @mobile {
-                padding: 10px 22px 10px 45px;
-                background-color: @font-swatch7-background-color-hover;
-                background-position: 20px center;
-                cursor: pointer;
-                text-decoration: none;
-            }
-        }
-
-        .style--light & {
-            color: @contrast--light;
-        }
-
-        .style--accent & {
-            color: @contrast--accent;
-        }
-
-        .style--dark & {
-            color: @contrast--dark;
-        }
-
-        &.justifyleft {
-            @media @mobile {
-                text-align: left;
-            }
-        }
-    
-        &.justifycenter {
-            @media @mobile {
-                text-align: center;
-            }
-        }
-    
-        &.justifyright {
-            @media @mobile {
-                text-align: right;
-            }
-        }
-    
-        &.justifyfull {
-            @media @mobile {
-                text-align: justify;
-            }
-        }
-    
-        &.italic {
-            @media @mobile {
-                font-style: italic;
-            }
-        }
-    
-        &.bold {
-            @media @mobile {
-                font-weight: bold;
-            }
-        }
     }
 }
 
@@ -2106,12 +2089,17 @@ hr.line {
     }
     
     .twitter-profile-pic {
-        background-image: image('/images/twitter-img.png');
-        background-position: right center;
-        background-repeat: no-repeat;
-        margin-right: 15px;
+        display: block;
+        margin: 20px 25px 0 25px;
 
-        @media @mobile {
+        &:after {
+            content: '\f099';
+            background-image: none;
+            font-family: 'FontAwesome';
+            font-size: 1.5em;
+        }
+
+        a {
             display: none;
         }
     }
@@ -2702,7 +2690,7 @@ input[type=search] {
     a {
         padding-right: 30px;
         padding-top: 2px;
-        background-image: image('/images/desktop.png');
+        background-image: none;
         background-repeat: no-repeat;
         background-position: right center;
         font-size: @font-swatch5-font-size;
@@ -2713,118 +2701,8 @@ input[type=search] {
 
         &:hover,
         a:active {
-            background-image: image('/images/desktop.png');
-            background-repeat: no-repeat;
-            background-position: right center;
-            cursor: pointer;
             text-decoration: underline;
         }
-    }
-}
-
-// SOCIAL BAR / SOCIAL PROFILE
-
-.widget.socialicons,
-.widget.profile .bk-profile-socialicons {
-    padding: 10px 0;
-    font-size: 1em;
-    font-family: @font-swatch7-font-family;
-
-    span a {
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 18px;
-        display: inline-block;
-        margin-right: 6px;
-        margin-bottom: 8px;
-        width: 32px;
-        height: 32px;
-        -webkit-border-radius: 30px;
-        -moz-border-radius: 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        text-indent: 99999px;
-        white-space: nowrap;
-        border: 1px solid darken(@color-swatch7, 10%);
-        overflow: hidden;
-    
-        .style--light & {
-            border-color: @color--accent;
-            color: @contrast--light;
-        }
-    
-        .style--accent & {
-            background-color: @color--light;
-            border-color: @color--light;
-            color: @contrast--accent;
-        }
-    
-        .style--dark & {
-            background-color: @color--accent;
-            border-color: @color--accent;
-            color: @contrast--dark;
-        }
-    }
-
-    // SVG ICONS
-    
-    span.bk-socialicons-twitter a {
-        background-image: image('/images/social/socialicons-twitter.png');
-        background-image: image('/images/social/socialicons-twitter.svg');
-    }
-    
-    span.bk-socialicons-linkedin a {
-        background-image: image('/images/social/socialicons-linkedin.png');
-        background-image: image('/images/social/socialicons-linkedin.svg');
-    }
-    
-    span.bk-socialicons-facebook a {
-        background-image: image('/images/social/socialicons-facebook.png');
-        background-image: image('/images/social/socialicons-facebook.svg');
-    }
-    
-    span.bk-socialicons-rss a {
-        background-image: image('/images/social/socialicons-rss.png');
-        background-image: image('/images/social/socialicons-rss.svg');
-    }
-    
-    span.bk-socialicons-googleplus a {
-        background-image: image('/images/social/socialicons-googleplus.png');
-        background-image: image('/images/social/socialicons-googleplus.svg');
-    }
-    
-    span.bk-socialicons-youtube a {
-        background-image: image('/images/social/socialicons-youtube.png');
-        background-image: image('/images/social/socialicons-youtube.svg');
-    }
-}
-
-.widget.profile .bk-profile-socialicons span {
-    display: inline-block;
-
-    a {
-        margin-right: 10px;
-    }
-}
-
-.widget.socialicons span a:hover {
-   background-color: lighten(@color-swatch3,8%);
-
-   .style--light & {
-		background-color: fade(@color--accent, 80%);
-	}
-
-	.style--accent & {
-		background-color: fade(@color--light, 80%);
-	}
-
-	.style--dark & {
-		background-color: fade(@color--accent, 80%);
-	}
-
-    .widget.profile & {
-        background-color: lighten(@color-swatch3,8%);
     }
 }
 
@@ -2883,17 +2761,21 @@ input[type=search] {
             padding: 0;
             border-bottom: none;
         }
-        
+    
         .twitter-profile-pic {
-            margin: 5px 20px 0;
-            background-image: image('/images/twitter-img.png');
-            background-position: right center;
-            background-repeat: no-repeat;
-            text-indent: -20000px;
-            width: 45px;
-            height: 37px;
-            float: left;
-            margin-right: 15px;
+            display: block;
+            margin: 20px 25px 0 25px;
+    
+            &:after {
+                content: '\f099';
+                background-image: none;
+                font-family: 'FontAwesome';
+                font-size: 1.5em;
+            }
+    
+            a {
+                display: none;
+            }
         }
 
         .twitter-content {
@@ -3636,10 +3518,17 @@ input[type=search] {
 
 .widget.ecombasket .ecombasket-pull p:before,
 .widget.ecomproduct .ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
-	background-image: image('/images/basket.png');
-	background-image: image('/images/basket.svg');
-	background-size: 100% auto;
-	top: 1px;
+    content: '\f291';
+    display: inline-block;
+    top: 0;
+    margin-top: -0.25em;
+    margin-right: 0.5em;
+    background-image: none;
+    height: 1.5em;
+    width: 1.5em;
+    font-family: 'FontAwesome';
+    text-indent: 0;
+    font-size: 1.25em;
 }
 
 // Basket Summary

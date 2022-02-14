@@ -1,7 +1,7 @@
 {
 	"name":"In the Air",
-	"thumbnail":"thumbnail.png",
-	"screenshot":"intheair-screenshot.jpg",
+	"thumbnail":"images/thumbnail.png",
+	"screenshot":"images/screenshot.jpg",
 	"templateType":"standard",
     "versionTenCompatible": 1,
 	"pageTypes":["home"],
@@ -10,6 +10,11 @@
     "es": ["minimalista", "limpio", "fotografico", "moderno", "flexible", "abierto", "simple","serif", "monocromo", "tipografía"],
     "br": ["minimalista", "limpo", "fotografia", "moderno", "flexível", "aberto", "simples","serif", "monocromático", "tipografia"]
     },
+	"images": [
+		"images/gallery/1.jpg",
+		"images/gallery/2.jpg",
+		"images/gallery/3.jpg"
+	],
 	"colorSwatches":
     {
         "Swatch 1": {
@@ -119,7 +124,7 @@
             "color": "@color-swatch1",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch7",
-            "background-color-hover": "darken(@color-swatch7,5%)"
+            "background-color-hover": "darken(@color-swatch7, 5%)"
         },
         "font8": {
             "font-family": "\"Playfair Display\", Times New Roman, serif",
