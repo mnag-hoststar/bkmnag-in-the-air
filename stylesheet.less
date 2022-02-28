@@ -395,6 +395,7 @@ blockquote {
 table {
 	overflow: auto;
 	width: 100%;
+	max-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -1400,7 +1401,6 @@ body.edit {
                     @media @mobile {
                         font-size: bkscale(@font-swatch9-font-size,0.65);
                         line-height: bkscale(@font-swatch9-line-height,0.67);
-                        padding: 0 10px;
                     }
                 }
             }
@@ -3381,6 +3381,10 @@ header.ecom-featuredproducts-header {
     margin: 0 0 60px;
     padding: 0 10px;
     overflow: auto;
+
+	a:hover {
+		text-decoration: none;
+	}
     
     @media @tablet {
         width: 100%/2;
@@ -3439,6 +3443,7 @@ header.ecom-featuredproducts-header {
 		button {
 			margin-bottom: 1em;
 			text-align: center;
+            min-width: 250px;
         
 			@media @mobile {
 				width: 100%;
