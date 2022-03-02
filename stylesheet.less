@@ -151,30 +151,28 @@ p, span, dd {
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font-swatch5-font-size !important;
-		line-height: @font-swatch5-line-height !important;
-	
-		&, p, span, small, pre, code,
-		table, th, td {
-			color: @font-swatch5-color;
-		
-			.style--light & {
-                color: @font-swatch5-color;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
-		}
-	}
+.widget.content .wysihtml-editor-content,
+.widget.embed .embed-content,
+.widget.content.in-editing .wysihtml-editor-content {
+    font-size: @font-swatch5-font-size !important;
+    line-height: @font-swatch5-line-height !important;
+
+    &, p, span, small, pre, code,
+    table, th, td {
+        color: @font-swatch5-color;
+    
+        .style--light & {
+            color: @font-swatch5-color;
+        }
+    
+        .style--accent & {
+            color: @contrast--accent;
+        }
+    
+        .style--dark & {
+            color: @contrast--dark;
+        }
+    }
 }
 
 // List
@@ -2504,6 +2502,8 @@ form {
 		cursor: pointer;
 		padding-left: 2em;
 		margin-bottom: 0;
+		line-height: floor(@font-swatch5-line-height*0.8+2);
+		font-size: @font-swatch5-font-size;
 		word-break: break-word;
 		text-align: left;
 		text-transform: none;
@@ -2512,7 +2512,7 @@ form {
 			font-family: @font-swatch5-font-family;
 			font-weight: @font-swatch5-font-weight;
 			font-size: @font-swatch5-font-size;
-			line-height: @font-swatch5-line-height;
+			line-height: floor(@font-swatch5-line-height*0.8+2);
 			letter-spacing: @font-swatch5-letter-spacing;
 		}
 			
