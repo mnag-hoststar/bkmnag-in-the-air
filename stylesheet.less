@@ -2528,7 +2528,6 @@ form {
 
 		&:before {
 			min-width: 0;
-			margin-top: floor(@font-swatch5-line-height*0.1);
 			height: floor(@font-swatch5-line-height*0.8);
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
@@ -2562,7 +2561,6 @@ form {
 			border-radius: 50%;
 			background-color: @font-swatch7-background-color;
 			border: 1px solid @font-swatch7-background-color;
-			margin-top: floor(@font-swatch5-line-height*0.1);
 			height: floor(@font-swatch5-line-height*0.8);
 			transform: scale(50%);
 
@@ -2586,7 +2584,7 @@ form {
 	.label--checkbox,
 	label[for*="input--terms"] {
 		&:after {
-			margin-top: floor(@font-swatch5-line-height*-0.2+1);
+			margin-top: floor(@font-swatch5-line-height*-1.2/4);
 			height: floor(@font-swatch5-line-height*1.2);
 			border: 1px solid transparent;
 			box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
@@ -3414,6 +3412,13 @@ header.ecom-featuredproducts-header {
 		background-size: contain;
 		height: 250px;
 	}
+}
+
+.widget.ecomproductslist .ecom-productslist-image,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image {
+	display: none;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .widget.ecomproductslist .productlist-item-count {
