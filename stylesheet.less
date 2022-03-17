@@ -352,7 +352,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}
@@ -801,13 +801,13 @@ body.edit {
 
 	.language-selector.language-selector--dropdown & {
     	&:before {
-    	    content: "";
+    	    content: '';
             display: block;
     	    height: @language-line-height;
     	}
 
     	&:after {
-    	    content: "";
+    	    content: '';
             display: block;
     	    height: @language-padding*2;
     	}
@@ -962,7 +962,7 @@ body.edit {
 	&--current {
 	    &:after {
     		.language-selector.language-selector--dropdown & {
-        		content: "\25be";
+        		content: '\25be';
         		top: 50%;
         		right: 0;
         		margin-top: -(@language-line-height/4);
@@ -1220,7 +1220,7 @@ body.edit {
                 }
                 
                 &:after {
-                    content: "\25be";
+                    content: '\25be';
                     top: @font-swatch6-line-height/2+6;
                     right: 0.25em;
                     min-width: 1.5em;
@@ -1315,7 +1315,7 @@ body.edit {
 
     .main &:before,
     .main &:after {
-        content: " ";
+        content: ' ';
         display: table;
     }
 
@@ -1589,7 +1589,7 @@ button.button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
@@ -1737,7 +1737,7 @@ button.btn span {
 // Social Icons
 
 .widget.socialicons,
-footer.bk-footer .widget.profile .bk-profile-socialicons {
+.widget.profile .bk-profile-socialicons {
     padding: 10px 0;
     font-size: 1em;
     font-family: @font-swatch7-font-family;
@@ -1775,7 +1775,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
     }
 }
 
-footer.bk-footer .widget.profile .bk-profile-socialicons {
+.widget.profile .bk-profile-socialicons {
     span {
         a {
             background-color: transparent;
@@ -2520,7 +2520,7 @@ form {
 		&:after {
 			cursor: pointer;
 			display: block;
-			content: " ";
+			content: ' ';
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -2746,7 +2746,7 @@ form {
 }
 
 .bk-profile-address p:after {
-  content: "";
+  content: '';
 }
 
 // LINKED IN
@@ -3427,15 +3427,36 @@ header.ecom-featuredproducts-header {
 
 .ecom-product-category,
 .ecom-product-tag {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     line-height: 1.5em;
     word-break: break-word;
+
+    &:after {
+        content: ':\00a0';
+        order: 0;
+        display: inline-block;
+    }
 
     a {
         margin-top: 10px;
         display: inline-block;
         padding: 0 5px;
+    }
+}
+
+.store-category-link,
+.ecom-product-tag-link {
+    font-weight: 300;
+    order: 1;
+
+    &:after {
+        content: ',\00a0';
+    }
+
+    &:last-child::after {
+        content: none;
     }
 }
 
@@ -3641,7 +3662,7 @@ header.ecom-featuredproducts-header {
 
     &:before,
     &:after {
-        content: " ";
+        content: ' ';
         display: table;
     }
     
