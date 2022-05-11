@@ -188,7 +188,6 @@ ul, ol, li {
 
 p, ul, ol, li,
 dd, pre, code, span, small,
-.contentgroup__body,
 .widget.clicktocall a,
 .widget.clicktocall a:hover,
 blockquote,
@@ -392,8 +391,7 @@ blockquote {
 
 table {
 	overflow: auto;
-	width: 100%;
-	max-width: 100%;
+	min-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -485,12 +483,16 @@ td {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+        width: 100% !important;
+        max-width: 100%;
 	}
 	
 	.responsivecolumns & {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+        width: 100% !important;
+        max-width: 100%;
 	}
 	
 	&:first-child {
@@ -1256,6 +1258,11 @@ body.edit {
                         @media @tablet {
                             border-bottom: none;
                         }
+								
+						a .text {
+							overflow: visible;
+							word-break: break-word;
+						}
                     }
                 }
             }
@@ -1595,10 +1602,12 @@ button.button,
 .widget.yelpreview .review-body .review-link a,
 form.blog-search-form .form-group button,
 .blog-post-more-link a {
+    display: inline-block;
 	outline: none;
     margin: 0;
     padding: 9px 22px;
     min-height: 42px;
+    height: auto !important;
 	border: 1px solid darken(@color-swatch7, 10%);
 	background-color: @font-swatch7-background-color;
     font-family: @font-swatch7-font-family;
@@ -1606,6 +1615,7 @@ form.blog-search-form .form-group button,
 	letter-spacing: @font-swatch7-letter-spacing;
     font-size: @font-swatch7-font-size;
     text-decoration: none;
+    text-align: center;
 	text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
 	color: @font-swatch7-color;
 
@@ -1732,6 +1742,17 @@ button.btn span {
 	padding-left: 3.2em;
     background-size: 1.2em;
     background-position: 1.25em center;
+}
+
+.widget.filedownload div {
+	@media @mobile {
+		float: none;
+	}
+
+	span.file-name {
+		display: block;
+		margin: 0.5em 0;
+	}
 }
 
 // Social Icons
@@ -2532,6 +2553,7 @@ form {
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
 			border: 1px solid @font-swatch7-background-color;
+            border-radius: 0;
 
 			.style--light & {
 				border-color: @font-swatch7-background-color;
@@ -3425,38 +3447,44 @@ header.ecom-featuredproducts-header {
     clear: both;
 }
 
-.ecom-product-category,
-.ecom-product-tag {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    line-height: 1.5em;
-    word-break: break-word;
+.widget.ecomproduct {
+    .ecom-product {
+        .ecom-product-cattag {
+            .ecom-product-category,
+            .ecom-product-tag {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                line-height: 1.5em;
+                word-break: break-word;
 
-    &:after {
-        content: ':\00a0';
-        order: 0;
-        display: inline-block;
-    }
+                &:after {
+                    content: ':\00a0';
+                    order: 0;
+                    display: inline-block;
+                }
 
-    a {
-        margin-top: 10px;
-        display: inline-block;
-        padding: 0 5px;
-    }
-}
+                a {
+                    margin-top: 10px;
+                    display: inline-block;
+                    padding: 0 5px;
+                }
+            }
+        }
 
-.store-category-link,
-.ecom-product-tag-link {
-    font-weight: 300;
-    order: 1;
+        .store-category-link,
+        .ecom-product-tag-link {
+            font-weight: 300;
+            order: 1;
 
-    &:after {
-        content: ',\00a0';
-    }
+            &:after {
+                content: ',\00a0';
+            }
 
-    &:last-child::after {
-        content: none;
+            &:last-child::after {
+                content: none;
+            }
+        }
     }
 }
 
