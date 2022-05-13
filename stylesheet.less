@@ -277,7 +277,7 @@ code {
 // Blockquote
 
 blockquote {
-    background-color: darken(@font-swatch5-color, 10%);
+    background-color: darken(@color-swatch1, 10%);
     padding: 30px;
     border-radius: 4px;
     word-break: break-word;
@@ -288,11 +288,11 @@ blockquote {
     font-weight: @font-swatch5-font-weight;
     line-height: @font-swatch5-line-height;
     font-style: italic;
-    color: fade(@font-swatch5-color, 10%);
+    color: @color-swatch1;
 
     .style--light & {
-    	background-color: darken(@font-swatch5-color, 10%);
-		color: fade(@font-swatch5-color, 10%);
+		background-color: darken(@color-swatch1, 10%);
+		color: @color-swatch1;
 	}
 
 	.style--accent & {
@@ -307,7 +307,7 @@ blockquote {
 
     &:before {
         font-family: Georgia;
-        color: fade(@color-swatch1, 50%);
+        color: @color-swatch1;
         content: open-quote;
         font-size: 4em;
         line-height: .1em;
@@ -318,7 +318,7 @@ blockquote {
         text-shadow: 0px 1px 1px darken(@color-swatch1, 10%);
     
         .style--light & {
-            color: fade(@color-swatch1, 50%);
+            color: @color-swatch1;
             text-shadow: 0px 1px 1px darken(@color-swatch1, 10%);
         }
     
@@ -332,6 +332,10 @@ blockquote {
             text-shadow: 0px 1px 1px darken(@color--dark, 10%);
         }
     }
+
+	&:after {
+		display: none;
+	}
 }
 
 // Unordered and Ordered List
@@ -1232,37 +1236,55 @@ body.edit {
                     text-align: center;
                     border: none;
                 }
-            }
-        
-            &.folder-open {
+
                 > ul,
                 &:hover > ul {
-                    display: block;
+                    display: none;
                     position: absolute;
+                    left: auto;
+                    right: 0;
                     width: auto;
                     background-color: @color-swatch7;
                     z-index: 500;
                     padding: 0;
                     margin: 0;
+                    min-width: 180px;
                     max-width: 300px;
 
                     @media @tablet {
+                        display: none;
                         position: static;
+                        min-width: auto;
                         max-width: none;
-                        background-color: lighten(@color-swatch7,5%);
+                        background-color: lighten(@color-swatch7, 5%);
                     }
-        
+
                     > li {
                         display: block;
 
                         @media @tablet {
                             border-bottom: none;
                         }
-								
-						a .text {
-							overflow: visible;
-							word-break: break-word;
-						}
+                                    
+                        a .text {
+                            overflow: visible;
+                            word-break: break-word;
+        
+                            &:hover {
+                                background-color: darken(@font-swatch6-background-color-hover, 5%);
+                            }
+                        }
+                    }
+                }
+            }
+        
+            &.folder-open {
+                > ul,
+                &:hover > ul {
+                    display: block;
+
+                    @media @tablet {
+                        display: block;
                     }
                 }
             }
@@ -1607,7 +1629,7 @@ form.blog-search-form .form-group button,
     margin: 0;
     padding: 9px 22px;
     min-height: 42px;
-    height: auto !important;
+    height: auto;
 	border: 1px solid darken(@color-swatch7, 10%);
 	background-color: @font-swatch7-background-color;
     font-family: @font-swatch7-font-family;
@@ -1655,25 +1677,26 @@ form.blog-search-form .form-group button,
 	    	background-color: darken(@color--accent, 10%);
 	    }
     }
-}
 
-button.btn span {
-    font-family: @font-swatch7-font-family;
-    font-weight: @font-swatch7-font-weight;
-	letter-spacing: @font-swatch7-letter-spacing;
-    font-size: @font-swatch7-font-size;
-	color: @font-swatch7-color;
+    span {
+        font-family: @font-swatch7-font-family;
+        font-weight: @font-swatch7-font-weight;
+        letter-spacing: @font-swatch7-letter-spacing;
+        font-size: @font-swatch7-font-size;
+        color: @font-swatch7-color;
+        text-shadow: 0px 1px 1px darken(@color-swatch7, 20%);
 
-	.style--light & {
-		color: @font-swatch7-color;
-    }
-
-    .style--accent & {
-    	color: @contrast--dark;
-    }
-
-    .style--dark & {
-    	color: @contrast--accent;
+        .style--light & {
+            color: @font-swatch7-color;
+        }
+    
+        .style--accent & {
+            color: @contrast--dark;
+        }
+    
+        .style--dark & {
+            color: @contrast--accent;
+        }
     }
 }
 
@@ -2112,6 +2135,7 @@ select {
 	padding: 5px 8px;
 	border: 1px solid darken(@color-swatch1, 20%);
 	min-height: 42px;
+    height: auto !important;
 
 	.style--light & {
 		background-color: @color-swatch2;
