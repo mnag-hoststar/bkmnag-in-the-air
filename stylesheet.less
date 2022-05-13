@@ -288,11 +288,11 @@ blockquote {
     font-weight: @font-swatch5-font-weight;
     line-height: @font-swatch5-line-height;
     font-style: italic;
-    color: @color-swatch1;
+    color: @font-swatch5-color;
 
     .style--light & {
 		background-color: darken(@color-swatch1, 10%);
-		color: @color-swatch1;
+        color: @font-swatch5-color;
 	}
 
 	.style--accent & {
@@ -307,7 +307,7 @@ blockquote {
 
     &:before {
         font-family: Georgia;
-        color: @color-swatch1;
+        color: @font-swatch5-color;
         content: open-quote;
         font-size: 4em;
         line-height: .1em;
@@ -315,21 +315,21 @@ blockquote {
         vertical-align: -.4em;
         left: 5px;
         top: 30px;
-        text-shadow: 0px 1px 1px darken(@color-swatch1, 10%);
+        text-shadow: 0px 1px 1px darken(@color-swatch1, 15%);
     
         .style--light & {
-            color: @color-swatch1;
-            text-shadow: 0px 1px 1px darken(@color-swatch1, 10%);
+            color: @font-swatch5-color;
+            text-shadow: 0px 1px 1px darken(@color-swatch1, 15%);
         }
     
         .style--accent & {
-            color: fade(@color--accent, 50%);
-            text-shadow: 0px 1px 1px darken(@color--accent, 10%);
+            color: @contrast--accent;
+            text-shadow: 0px 1px 1px darken(@color--accent, 15%);
         }
     
         .style--dark & {
-            color: fade(@color--dark, 50%);
-            text-shadow: 0px 1px 1px darken(@color--dark, 10%);
+            color: @contrast--dark;
+            text-shadow: 0px 1px 1px darken(@color--dark, 15%);
         }
     }
 
