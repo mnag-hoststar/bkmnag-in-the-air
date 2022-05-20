@@ -1614,6 +1614,7 @@ button.button,
 .signupform fieldset button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1788,14 +1789,14 @@ form.blog-search-form .form-group button,
 
     span {
         a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: inline-block;
             background-image: none;
             margin: 0 5px 10px;
             padding: 0;
             width: 32px;
             height: 32px;
+            min-height: auto;
+            line-height: 32px;
             border-radius: 50%;
             text-indent: 0;
             font-size: 0;
@@ -1803,7 +1804,7 @@ form.blog-search-form .form-group button,
             &:before {
                 font-family: 'FontAwesome';
                 text-indent: 0;
-                font-size: 24px;
+                font-size: 20px;
             }
         }
 
@@ -2136,20 +2137,24 @@ select {
 	border: 1px solid darken(@color-swatch1, 20%);
 	min-height: 42px;
     height: auto !important;
+    color: @font-swatch5-color;
 
 	.style--light & {
 		background-color: @color-swatch2;
 		border-color: darken(@color-swatch1, 20%);
+        color: @font-swatch5-color;
 	}
 
 	.style--accent & {
 		background-color: @color-swatch2;
 		border-color: darken(@color--accent, 20%);
+        color: @font-swatch5-color;
 	}
 
 	.style--dark & {
 		background-color: @color-swatch2;
 		border-color: darken(@color--dark, 20%);
+        color: @font-swatch5-color;
 	}
 
 	&:focus {
@@ -2438,7 +2443,7 @@ form {
     }
     
     textarea {
-        height: 100px;
+        min-height: 100px;
         width: 100%;
         font-family: @font-swatch5-font-family;
         font-size: @font-swatch5-font-size;
