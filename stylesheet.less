@@ -2288,41 +2288,47 @@ input[type="search"]::-webkit-search-decoration {
 
 // BLOG
 
-.widget.blogsearch .form-group {
-    display: flex;
-    flex-wrap: wrap;
+.widget.blogsearch {
+    padding: 10px 0 40px;
+    clear: both;
+    margin: 0;
 
-    label {
-        width: 100%;
-        margin-bottom: 6px;
-    }
-
-    input {
-        display: block;
-        width: auto;
-        flex-grow: 1;
-        margin-right: 10px;
-
-        @media @mobile {
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+    
+        label {
             width: 100%;
-            margin-right: 0;
+            margin-bottom: 6px;
         }
     
-        .responsivecolumns & {
-            width: 100%;
-            margin-right: 0;
-        }
-    }
-
-    button.blog-search-submit-button {
-        @media @mobile {
-            width: 100%;
-            margin-top: 10px;
+        input {
+            display: block;
+            width: auto;
+            flex-grow: 1;
+            margin-right: 10px;
+    
+            @media @mobile {
+                width: 100%;
+                margin-right: 0;
+            }
+        
+            .responsivecolumns & {
+                width: 100%;
+                margin-right: 0;
+            }
         }
     
-        .responsivecolumns & {
-            width: 100%;
-            margin-top: 10px;
+        button.blog-search-submit-button {
+            @media @mobile {
+                width: 100%;
+                margin-top: 10px;
+            }
+        
+            .responsivecolumns & {
+                width: 100%;
+                margin-top: 10px;
+            }
         }
     }
 }
@@ -2416,18 +2422,6 @@ footer.blog-post-metadata {
 	.blog-post-pagination-page {
 		margin: 1em;
 	}
-}
-
-// Single Blog Post
-
-.widget.blogsearch {
-	clear: both;
-    margin: 0;
-    padding: 10px 0;
-
-    button {
-        margin: 10px 0;
-    }
 }
 
 // FORMS
